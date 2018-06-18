@@ -3,7 +3,7 @@ parameters:
         yml_about_html:
             title: yml_about_html
             screenshot: 'mapbender_user.png'
-            description: "YML Test About Dialog in sidepane, HTML and Button in footer"
+            description: "YML Test About Dialog Button in toolbar"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
