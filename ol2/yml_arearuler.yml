@@ -89,6 +89,7 @@ parameters:
                         class: Mapbender\CoreBundle\Element\Ruler
                         target: map
                         type: area
+                        immediate: true
                 sidepane:
                     layertree:
                         title: Layertree
