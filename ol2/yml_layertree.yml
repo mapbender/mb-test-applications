@@ -2,7 +2,7 @@ parameters:
     applications:
         yml_layertree:
             title: yml_Layertree
-            screenshot: 
+            screenshot:
             description: "YML Test Layertree in Sidepane"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
@@ -12,13 +12,16 @@ parameters:
                     properties: {"name": "accordion", "label": "mb.manager.template.region.accordion.label"}
             layersets:
                 main:
-                    mapbender_users:
+                    schwalmtal:
                         class: Mapbender\WmsBundle\Entity\WmsInstance
-                        title: Mapbender Users
-                        url: http://wms.wheregroup.com/cgi-bin/mapbender_user.xml # http://wms.wheregroup.com/cgi-bin/mapbender_user.xml?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities
+                        title: Schwalmtal UMN
+                        url: http://wms2016.wheregroup.lan/cgi-bin/mapserv?map=/data/umn/schwalmtal/schwalmtal.map # http://wms2016.wheregroup.lan/cgi-bin/mapserv?map=/data/umn/schwalmtal/schwalmtal.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities
                         layers:
-                            10: { name: Mapbender_User,    title : User, visible: true, legendurl: http://wms.wheregroup.com/cgi-bin/mapbender_user.xml?REQUEST=GetLegendGraphic&VERSION=1.1.1&SERVICE=WMS&Layer=Mapbender_User&FORMAT=image/png }
-                            22: { name: Mapbender_Names,   title : Name, visible: true, queryable: true}
+                            10: { name: Flurstuecke, title : Flurstuecke, visible: true }
+                            11: { name: Bodenarten,   title : Bodenarten, visible: true, queryable: true }
+                            12: { name: landnutzung, title: landnutzung, visible: true, queryable: true}
+                            13: { name: Hoehenlinien, title: Höhenlinien, visible: true, queryable: true}
+                            14: { name: Bohrungen, title: Bohrungen, visible: true, queryable: true}
                         info_format: text/html
                         visible: true
                         format: image/png
@@ -59,7 +62,7 @@ parameters:
                         srs: EPSG:25832
                         units: m
                         extents:
-                            start: [361000,5619000,371150,5625000]
+                            start: [306045, 5673390, 311006, 5676023]
                             max: [-500000,4350000,1600000,6850000]
                         scales: [5000000,1000000,500000,100000,50000,25000,10000,7500,5000,2500,1000,500]
                         maxResolution: 'auto'
@@ -68,7 +71,6 @@ parameters:
                         class: Mapbender\CoreBundle\Element\ZoomBar
                         target: map
                         components: ["pan","history","zoom_box","zoom_max","zoom_slider"]
-                        position: [15em, 3em]
                         stepsize: 50
                         stepbypixel: true
                         anchor: right-top
