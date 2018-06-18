@@ -89,7 +89,6 @@ parameters:
                         class: Mapbender\CoreBundle\Element\Ruler
                         target: map
                         type: line
-                        immediate: true
                 sidepane:
                     layertree:
                         title: Layertree

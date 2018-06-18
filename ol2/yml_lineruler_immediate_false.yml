@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_arearuler:
-            title: yml_arearuler
+        yml_lineruler:
+            title: yml_lineruler
             screenshot: 'mapbender_user.png'
-            description: "YML Test Area Ruler"
+            description: "YML Test Line Ruler"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -51,13 +51,13 @@ parameters:
                         opacity: 100
             elements:
                 toolbar:
-                    arearulerButton:
-                        title: Area Ruler
-                        tooltip: Area Ruler
+                    linerulerButton:
+                        title: Line Ruler
+                        tooltip: Line Ruler
                         class: Mapbender\CoreBundle\Element\Button
-                        icon: icon-area-ruler
+                        icon: icon-line-ruler
                         label: true
-                        target: arearuler
+                        target: lineruler
                         deactivate: deactivate
                         group: rulers
                 content:
@@ -83,12 +83,13 @@ parameters:
                         anchor: right-top
                         position: [200,40]
                         draggable: false
-                    arearuler:
-                        title: Area
-                        tooltip: 'area'
+                    lineruler:
+                        title: Distance
+                        tooltip: 'ruler'
                         class: Mapbender\CoreBundle\Element\Ruler
                         target: map
-                        type: area
+                        type: line
+                        immediate: false
                 sidepane:
                     layertree:
                         title: Layertree
