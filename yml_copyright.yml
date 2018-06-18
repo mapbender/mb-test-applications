@@ -2,7 +2,7 @@ parameters:
     applications:
         yml_copyright:
             title: yml_Copyright
-            screenshot: 
+            screenshot:
             description: "YML Test Copyright"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
@@ -87,6 +87,8 @@ parameters:
                         tooltip: "Copyright"
                         content: "<p>Lorem <b>ipsum</b> <i>dolor</i> <u>sit</u> <strong>amet</strong></p><p><marquee>consetetur</marquee></p><p>sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p><a href='http://www.mapbender3.org' target='_new'><img src='../../bundles/mapbendercore/image/logo_mb3.png'/></a></p><h1>At vero eos</h1><p><ul><li>Et</li><li>accusam</li><li>et justo</li><li></ul></p><p><ol><li>duo</li><li>dolores</li><li>et ea rebum.</li></ol></p><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>"
                         autoOpen: true
+                        popupWidth: 600
+                        popupHeight: 400
                         # width: 200px
                         # anchor: 'left-bottom'
                         # position: array('0px','0px')
