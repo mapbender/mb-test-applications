@@ -1,9 +1,9 @@
 parameters:
     applications:
         yml_lineruler:
-            title: yml_lineruler
+            title: yml_lineruler_immediate_false
             screenshot: 'mapbender_user.png'
-            description: "YML Test Line Ruler"
+            description: "YML Test Line Ruler false"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -77,7 +77,6 @@ parameters:
                         class: Mapbender\CoreBundle\Element\ZoomBar
                         target: map
                         components: ["pan","history","zoom_box","zoom_max","zoom_slider"]
-                        position: [15em, 3em]
                         stepsize: 50
                         stepbypixel: true
                         anchor: right-top
