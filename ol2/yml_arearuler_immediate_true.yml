@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_arearuler:
-            title: yml_arearuler
+        yml_arearuler_it:
+            title: yml_arearuler_immediate_true
             screenshot: 'mapbender_user.png'
-            description: "YML Test Area Ruler"
+            description: "YML Test Area Ruler Immediate True"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
