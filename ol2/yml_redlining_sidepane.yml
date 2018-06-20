@@ -1,7 +1,7 @@
 parameters:
     applications:
-        yml_redlining:
-            title: yml_redlining
+        yml_redlining_sidepane:
+            title: yml_redlining_sidepane
             screenshot: ''
             description: "YML Test Redlining in Sidepane"
             published: true
@@ -12,19 +12,6 @@ parameters:
                     properties: {"name": "accordion", "label": "mb.manager.template.region.accordion.label"}
             layersets:
                 main:
-                    mapbender_users:
-                        class: Mapbender\WmsBundle\Entity\WmsInstance
-                        title: Mapbender Users
-                        url: http://wms.wheregroup.com/cgi-bin/mapbender_user.xml # http://wms.wheregroup.com/cgi-bin/mapbender_user.xml?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities
-                        layers:
-                            10: { name: Mapbender_User,    title : User, visible: true, legendurl: http://wms.wheregroup.com/cgi-bin/mapbender_user.xml?REQUEST=GetLegendGraphic&VERSION=1.1.1&SERVICE=WMS&Layer=Mapbender_User&FORMAT=image/png }
-                            22: { name: Mapbender_Names,   title : Name, visible: true, queryable: true}
-                        info_format: text/html
-                        visible: true
-                        format: image/png
-                        transparent: true
-                        tiled: false
-                        opacity: 85
                     osm:
                         class: Mapbender\WmsBundle\Entity\WmsInstance
                         title: OSM Demo
@@ -72,7 +59,6 @@ parameters:
                         stepsize: 50
                         stepbypixel: true
                         anchor: right-top
-                        position: [200,40]
                         draggable: false
                 sidepane:
                     redlining:
@@ -87,19 +73,7 @@ parameters:
                             - rectangle
                         display_type: element
                         auto_activate: false
-                        deactivate_on_close: false                     
-                    layertree:
-                        title: Layertree
-                        class: Mapbender\CoreBundle\Element\Layertree
-                        target: map
-                        type: element
-                        displaytype: tree
-                        useAccordion: true
-                        autoOpen: false
-                        titlemaxlength: 40
-                        showBaseSource: true
-                        layerRemove: true
-                        menu: [opacity,zoomtolayer,metadata]
+                        deactivate_on_close: false
                 footer:
                     activityindicator:
                         class: Mapbender\CoreBundle\Element\ActivityIndicator
