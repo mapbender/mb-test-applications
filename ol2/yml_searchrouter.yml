@@ -3,7 +3,7 @@ parameters:
         yml_searchrouter:
             title: yml_searchrouter
             screenshot: ''
-            description: "YML Test SerachRouter"
+            description: "YML Test SearchRouter"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

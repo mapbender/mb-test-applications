@@ -3,7 +3,7 @@ parameters:
         yml_searchrouter_naked:
             title: yml_searchrouter_naked
             screenshot: ''
-            description: "YML Test SerachRouter naked"
+            description: "YML Test SearchRouter (naked)"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
