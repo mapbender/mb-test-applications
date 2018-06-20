@@ -1,7 +1,7 @@
 parameters:
     applications:
-        yml_scaledisplay_naked:
-            title: yml_scaledisplay_naked
+        yml_scalebar_naked:
+            title: yml_scalebar_naked
             screenshot: 'mapbender_user.png'
             description: "YML Test ScaleBar (naked)"
             published: true
