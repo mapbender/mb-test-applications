@@ -64,7 +64,7 @@ parameters:
                         follow: true
                         action: null
                         centerOnFirstPosition: true
-                        zoomToAccuracy: true
+                        zoomToAccuracy: false
                         zoomToAccuracyOnFirstPosition: true
                 content:
                     map:
