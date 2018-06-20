@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_scale:
-            title: yml_scale
+        yml_scalebar:
+            title: yml_scalebar
             screenshot: 'mapbender_user.png'
-            description: "YML Test ScaleBar and Scaledisplay"
+            description: "YML Test ScaleBar"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -12,19 +12,6 @@ parameters:
                     properties: {"name": "accordion", "label": "mb.manager.template.region.accordion.label"}
             layersets:
                 main:
-                    mapbender_users:
-                        class: Mapbender\WmsBundle\Entity\WmsInstance
-                        title: Mapbender Users
-                        url: http://wms.wheregroup.com/cgi-bin/mapbender_user.xml # http://wms.wheregroup.com/cgi-bin/mapbender_user.xml?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities
-                        layers:
-                            10: { name: Mapbender_User,    title : User, visible: true, legendurl: http://wms.wheregroup.com/cgi-bin/mapbender_user.xml?REQUEST=GetLegendGraphic&VERSION=1.1.1&SERVICE=WMS&Layer=Mapbender_User&FORMAT=image/png }
-                            22: { name: Mapbender_Names,   title : Name, visible: true, queryable: true}
-                        info_format: text/html
-                        visible: true
-                        format: image/png
-                        transparent: true
-                        tiled: false
-                        opacity: 85
                     osm:
                         class: Mapbender\WmsBundle\Entity\WmsInstance
                         title: OSM Demo
@@ -72,7 +59,6 @@ parameters:
                         stepsize: 50
                         stepbypixel: true
                         anchor: right-top
-                        position: [200,40]
                         draggable: false
                     scalebar:
                         class: Mapbender\CoreBundle\Element\ScaleBar
@@ -81,14 +67,6 @@ parameters:
                         position: ['20px', '20px']
                         maxWidth: 400
                         units: ['km']
-                    scaledisplay:
-                        title: Scale Display
-                        class: Mapbender\CoreBundle\Element\ScaleDisplay
-                        tooltip: Scale
-                        target: map
-                        anchor: left-top
-                        scalePrefix: Scale
-                        unitPrefix: true
                 sidepane:
                 footer:
                     activityindicator:
