@@ -184,16 +184,16 @@ parameters:
                                                name: public
                                                value: true
                                                title: public (this new object is public)
-                                clustering:
-                                    - scale: 10000        # Zoomstufe
-                                      distance: 60        # Distanz zwischen einzelne Features in Metern, die zusammengefügt werden
-                                    - scale: 2500
-                                      distance: 100
-                                    - scale: 1000
-                                      distance: 50
-                                    - scale: 500
-                                      distance: 1
-                                      disable: true
+#                                clustering:
+#                                    - scale: 10000        # Zoomstufe
+#                                      distance: 50        # Distanz zwischen einzelne Features in Metern, die zusammengefügt werden
+#                                    - scale: 2500
+#                                      distance: 50
+#                                    - scale: 1000
+#                                      distance: 50
+#                                    - scale: 500
+#                                      distance: 1
+#                                      disable: true
                                 styles:
                                     default:
                                         strokeWidth: 2
