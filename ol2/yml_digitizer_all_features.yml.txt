@@ -7,6 +7,7 @@ parameters:
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
+                -
                     name: sidepane
                     properties: {"name": "accordion", "label": "mb.manager.template.region.accordion.label"}
             layersets:
@@ -81,7 +82,9 @@ parameters:
                         schemes:
                             poi:
                                 label: point digitizing
+#                                inlineSearch: true
                                 maxResults: 500
+                                minscale: 5000
                                 featureType:
                                     connection: search_db
                                     table: poi
@@ -94,6 +97,7 @@ parameters:
                                 allowEditData: true
                                 allowDelete: true
                                 allowDigitize: true
+                                useContextMenu: true
                                 toolset:
                                     - type: drawPoint
                                     - type: moveFeature
@@ -102,10 +106,11 @@ parameters:
                                 popup:
                                     title: point test suite
                                     width: 500px
-                                searchType: currentExtent   # currentExtent|all - default is currentExtent
+                                searchType: all   # currentExtent|all - default is currentExtent
                                 tableFields:
                                     gid: {label: Nr. , width: 20%}
                                     name: {label: Name , width: 80%}
+
                                 formItems:
                                    - type: tabs
                                      children:
@@ -174,6 +179,7 @@ parameters:
                             line:
                                 label: line digitizing
                                 maxResults: 1500
+                                minScale: 100000
                                 featureType:
                                     connection: search_db
                                     table: lines
@@ -182,7 +188,11 @@ parameters:
                                     geomField: geom
                                     srid: 4326
                                 openFormAfterEdit: true
+                                zoomScaleDenominator: 10000
+                                allowEditData: true
                                 allowDelete: true
+                                allowDigitize: true
+                                useContextMenu: true
                                 toolset:
                                     - type: drawLine
                                     - type: modifyFeature
@@ -192,7 +202,7 @@ parameters:
                                 popup:
                                     title: line test suite
                                     width: 500px
-                                searchType: currentExtent   # currentExtent|all - default is currentExtent
+                                searchType: all   # currentExtent|all - default is currentExtent
                                 tableFields:
                                     gid: {label: Nr. , width: 20%}
                                     name: {label: Name , width: 80%}
@@ -216,6 +226,7 @@ parameters:
                             polygon:
                                 label: polygon digitizing
                                 maxResults: 1500
+                                minScale: 25000
                                 featureType:
                                     connection: search_db
                                     table: polygons
@@ -224,7 +235,11 @@ parameters:
                                     geomField: geom
                                     srid: 4326
                                 openFormAfterEdit: true
-                                allowDelete: false
+                                zoomScaleDenominator: 1000
+                                allowEditData: true
+                                allowDelete: true
+                                allowDigitize: true
+                                useContextMenu: true
                                 toolset:
                                     - type: drawPolygon
                                     - type: drawRectangle
@@ -238,7 +253,7 @@ parameters:
                                 popup:
                                     title: polygon test suite
                                     width: 500px
-                                searchType: currentExtent   # currentExtent|all - default is currentExtent
+                                searchType: all   # currentExtent|all - default is currentExtent
                                 tableFields:
                                     gid: {label: Nr. , width: 20%}
                                     name: {label: Name , width: 80%}
