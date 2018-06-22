@@ -23,20 +23,41 @@ parameters:
                             13: { name: Hoehenlinien, title: Höhenlinien, visible: true, queryable: true}
                             14: { name: Bohrungen, title: Bohrungen, visible: true, queryable: true}
                         info_format: text/html
-                        visible: true
+                        visible: false
                         format: image/png
                         transparent: true
                         tiled: false
                         opacity: 85
+                    topplus:
+                        class: Mapbender\WmsBundle\Entity\WmsInstance
+                        title: TopPlusOpen (GeoBasis-DE / BKG 2018)
+                        url: http://sgx.geodatenzentrum.de/wms_topplus_web_open?
+                        layers:
+                            20: {name: web, title: TopPlusOpen, visible: true }
+                            21: {name: web_grau, title: TopPlusOpen Graustufen, visible: false }
+                            22: {name: p50, title: TopPlusOpen P50, visible: false }
+                            23: {name: p50_grau, title: TopPlusOpen P50 Graustufen, visible: false }
+                            24: {name: p25, title: TopPlusOpen P25, visible: false }
+                            25: {name: p25_grau, title: TopPlusOpen P25 Graustufen, visible: false }
+                            26: {name: p17.5, title: TopPlusOpen P17.5, visible: false }
+                            27: {name: p17.5_grau, title: TopPlusOpen P17.5 Graustufen, visible: false }
+                            28: {name: p10, title: TopPlusOpen P10, visible: false }
+                            29: {name: p10_grau, title: TopPlusOpen P10 Graustufen, visible: false }
+                        info_format: text/html
+                        visible: false
+                        format: image/png8
+                        transparent: true
+                        tiled: false
+                        opacity: 100
                     webatlasde:
                         class: Mapbender\WmsBundle\Entity\WmsInstance
                         title: WebAtlasDeLight (GeoBasis-DE / BKG 2018)
                         url: http://sg.geodatenzentrum.de/wms_webatlasde.light?
                         layers:
-                            10: { name: webatlasde.light, title: WebAtlasDE.light, visible: true }
+                            30: { name: webatlasde.light, title: WebAtlasDE.light, visible: true }
                         info_format: text/html
-                        visible: true
-                        format: image/png
+                        visible: false
+                        format: image/png8
                         transparent: true
                         tiled: false
                         opacity: 100
@@ -45,7 +66,7 @@ parameters:
                         title: OSM Demo
                         url: http://osm-demo.wheregroup.com/service # http://osm-demo.wheregroup.com/service?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities
                         layers:
-                            30: { name: osm,    title : Germany OSM Demo WhereGroup,  visible: true }
+                            40: { name: osm,    title : Germany OSM Demo WhereGroup,  visible: true }
                         info_format: text/html
                         visible: true
                         format: image/png
@@ -58,7 +79,7 @@ parameters:
                         title: OSM Demo
                         url: http://osm-demo.wheregroup.com/service # http://osm-demo.wheregroup.com/service?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities
                         layers:
-                            40: { name: osm, title : Germany OSM Demo WhereGroup,  visible: true }
+                            50: { name: osm, title : Germany OSM Demo WhereGroup,  visible: true }
                         tiled: false
                         format: image/png
                         transparent: true
@@ -88,7 +109,7 @@ parameters:
                         displaytype: tree
                         useAccordion: true
                         autoOpen: false
-                        titlemaxlength: 40
+                        titlemaxlength: 35
                         showBaseSource: true
                         layerRemove: true
                         menu: [opacity,zoomtolayer,metadata]
