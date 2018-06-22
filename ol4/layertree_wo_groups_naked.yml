@@ -73,18 +73,6 @@ parameters:
                         transparent: true
                         tiled: true
                         opacity: 100
-                overview:
-                    osm_overview:
-                        class: Mapbender\WmsBundle\Entity\WmsInstance
-                        title: OSM Demo
-                        url: http://osm-demo.wheregroup.com/service # http://osm-demo.wheregroup.com/service?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities
-                        layers:
-                            50: { name: osm, title : Germany OSM Demo WhereGroup,  visible: true }
-                        tiled: false
-                        format: image/png
-                        transparent: true
-                        visible: true
-                        opacity: 100
             elements:
                 toolbar:
                 content:
