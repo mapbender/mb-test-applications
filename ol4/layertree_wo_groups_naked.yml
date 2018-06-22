@@ -28,6 +28,18 @@ parameters:
                         transparent: true
                         tiled: false
                         opacity: 85
+                    webatlasde:
+                        class: Mapbender\WmsBundle\Entity\WmsInstance
+                        title: WebAtlasDeLight (GeoBasis-DE / BKG 2018)
+                        url: http://sg.geodatenzentrum.de/wms_webatlasde.light?
+                        layers:
+                            10: { name: webatlasde.light, title: WebAtlasDE.light, visible: true }
+                        info_format: text/html
+                        visible: true
+                        format: image/png
+                        transparent: true
+                        tiled: false
+                        opacity: 100
                     osm:
                         class: Mapbender\WmsBundle\Entity\WmsInstance
                         title: OSM Demo
@@ -46,7 +58,7 @@ parameters:
                         title: OSM Demo
                         url: http://osm-demo.wheregroup.com/service # http://osm-demo.wheregroup.com/service?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities
                         layers:
-                            40: { name: osm,    title : Germany OSM Demo WhereGroup,  visible: true }
+                            40: { name: osm, title : Germany OSM Demo WhereGroup,  visible: true }
                         tiled: false
                         format: image/png
                         transparent: true
@@ -67,15 +79,6 @@ parameters:
                         scales: [5000000,1000000,500000,100000,50000,25000,10000,7500,5000,2500,1000,500]
                         maxResolution: 'auto'
                         otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:900913","EPSG:4326"]
-                    zoombar:
-                        class: Mapbender\CoreBundle\Element\ZoomBar
-                        target: map
-                        components: ["pan","history","zoom_box","zoom_max","zoom_slider"]
-                        stepsize: 50
-                        stepbypixel: true
-                        anchor: right-top
-                        position: [200,40]
-                        draggable: false
                 sidepane:
                     layertree:
                         title: Layertree
