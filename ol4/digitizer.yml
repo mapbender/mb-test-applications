@@ -1,7 +1,7 @@
 parameters:
     applications:
-        yml_digitizer:
-            title: yml_digitizer
+        digitizer:
+            title: digitizer
             screenshot: 'mapbender_user.png'
             description: "YML Test Digitizer in Sidepane"
             published: true

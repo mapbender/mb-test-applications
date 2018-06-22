@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_suggestmap:
-            title: yml_suggestmap
+        Suggestmap:
+            title: Suggestmap
             screenshot: 'mapbender_user.png'
-            description: "YML Test Suggest Map"
+            description: "Test Suggest Map"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -51,7 +51,7 @@ parameters:
                         opacity: 100
             elements:
                 toolbar:
-                    suggestmap-button: 
+                    suggestmap-button:
                         title: 'Suggest map'
                         tooltip: 'Suggest map'
                         label: true

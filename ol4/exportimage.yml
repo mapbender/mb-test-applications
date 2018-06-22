@@ -1,8 +1,8 @@
 parameters:
     applications:
-        yml_Export_Image:
-            title: yml_Export_Image
-            screenshot: 
+        Export_Image:
+            title: Export Image
+            screenshot:
             description: "YML Test Export Image."
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen

@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_scaledisplay_toolbar:
-            title: yml_scaledisplay_toolbar
+        Scaledisplay_Toolbar:
+            title: Scaledisplay in Toolbar
             screenshot: 'mapbender_user.png'
-            description: "YML Test Scaledisplay in Toolbar"
+            description: "Test Scaledisplay in Toolbar"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

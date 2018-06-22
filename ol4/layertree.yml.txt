@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_layertree:
-            title: yml_Layertree
+        Layertree_Sidepane:
+            title: Layertree in Sidepane
             screenshot:
-            description: "YML Test Layertree in Sidepane"
+            description: "Test Layertree in Sidepane"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

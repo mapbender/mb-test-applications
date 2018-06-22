@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_scaledisplay_naked:
-            title: yml_scaledisplay_naked
+        Scaledisplay_Naked:
+            title: Scaledisplay (naked)
             screenshot: 'mapbender_user.png'
-            description: "YML Test Scaledisplay Naked"
+            description: "Test Scaledisplay (naked)"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

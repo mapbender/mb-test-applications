@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_about_footer:
-            title: yml_about_footer
+        About_Footer:
+            title: About Footer
             screenshot:
-            description: "YML Test About Dialog in footer"
+            description: "Test About Dialog in footer"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

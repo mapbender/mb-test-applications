@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_about_html:
-            title: yml_about_html
+        About_Html:
+            title: About HTML Button in Toolbar
             screenshot: 'mapbender_user.png'
-            description: "YML Test About Dialog Button in toolbar"
+            description: "Test About Dialog Button in toolbar"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

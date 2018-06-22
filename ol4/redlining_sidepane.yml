@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_redlining_sidepane:
-            title: yml_redlining_sidepane
+        Redlining_Sidepane:
+            title: Redlining Sidepane
             screenshot: ''
-            description: "YML Test Redlining in Sidepane"
+            description: "Test Redlining in Sidepane"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

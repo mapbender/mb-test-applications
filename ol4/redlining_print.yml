@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_redlining_print:
-            title: yml_redlining_print
+        Redlining_Print:
+            title: Redlining Print
             screenshot: 'mapbender_user.png'
-            description: "YML Test Redlining with Print"
+            description: "Test Redlining with Print"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -133,7 +133,7 @@ parameters:
                             - rectangle
                         display_type: element
                         auto_activate: true
-                        deactivate_on_close: false  
+                        deactivate_on_close: false
                     layertree:
                         title: Layertree
                         class: Mapbender\CoreBundle\Element\Layertree

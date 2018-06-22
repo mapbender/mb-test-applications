@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_scalebar_naked:
-            title: yml_scalebar_naked
+        Scalebar_Naked:
+            title: Scalebar (naked)
             screenshot: 'mapbender_user.png'
-            description: "YML Test ScaleBar (naked)"
+            description: "Test ScaleBar (naked)"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

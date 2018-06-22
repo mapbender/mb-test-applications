@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_wms_naked:
-            title: yml_wms_naked
+        Wms_Loader_naked:
+            title: Wms Loader (naked)
             screenshot: 'mapbender_user.png'
-            description: "YML Test WMS Loader Naked"
+            description: "Test WMS Loader (naked)"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

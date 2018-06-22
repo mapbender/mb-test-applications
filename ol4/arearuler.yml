@@ -1,7 +1,7 @@
 parameters:
     applications:
-        yml_arearuler:
-            title: yml_arearuler
+        arearuler:
+            title: arearuler
             screenshot: 'mapbender_user.png'
             description: "YML Test Area Ruler"
             published: true

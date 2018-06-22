@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_searchrouter:
-            title: yml_searchrouter
+        Searchrouter:
+            title: Searchrouter
             screenshot: ''
-            description: "YML Test SearchRouter"
+            description: "Test SearchRouter"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

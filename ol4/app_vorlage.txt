@@ -1,8 +1,8 @@
 parameters:
     applications:
-        yml_Xxx:
-            title: yml_Xxx
-            screenshot: 
+        Xxx:
+            title: Xxx
+            screenshot:
             description: "YML Test Xxx."
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
@@ -297,7 +297,7 @@ parameters:
                             - rectangle
                         display_type: element
                         auto_activate: false
-                        deactivate_on_close: false                        
+                        deactivate_on_close: false
                 footer:
                     activityindicator:
                         class: Mapbender\CoreBundle\Element\ActivityIndicator

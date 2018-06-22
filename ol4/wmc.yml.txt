@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_wmc:
-            title: yml_wmc
+        Wmc_Editor_List_Loader:
+            title: Wmc Editor, List and Loader
             screenshot: 'mapbender_user.png'
-            description: "YML Test WMC Editor, WMC List and WMC Loader"
+            description: "Test WMC Editor, WMC List and WMC Loader"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

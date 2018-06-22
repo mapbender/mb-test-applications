@@ -1,7 +1,7 @@
 parameters:
     applications:
-        yml_arearuler_if:
-            title: yml_arearuler_immediate_false
+        arearuler_if:
+            title: arearuler_immediate_false
             screenshot: 'mapbender_user.png'
             description: "YML Test Area Ruler Immediate False"
             published: true

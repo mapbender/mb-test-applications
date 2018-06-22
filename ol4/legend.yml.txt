@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_legend:
-            title: yml_Legend
+        Legend_Sidepane:
+            title: Legend Sidepane
             screenshot: 'mapbender_user.png'
-            description: "YML Test Legend in Sidepane"
+            description: "Test Legend in Sidepane"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

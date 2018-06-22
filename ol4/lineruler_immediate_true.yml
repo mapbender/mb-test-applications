@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_lineruler_it:
-            title: yml_lineruler_immediate_true
+        Lineruler_it:
+            title: Lineruler Immediate true
             screenshot: 'mapbender_user.png'
-            description: "YML Test Line Rule Immediate True"
+            description: "Test Line Rule Immediate True"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

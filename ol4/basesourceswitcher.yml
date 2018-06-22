@@ -1,7 +1,7 @@
 parameters:
     applications:
-        yml_basesourceswitcher:
-            title: yml_basesourceswitcher
+        basesourceswitcher:
+            title: basesourceswitcher
             screenshot: 'mapbender_user.png'
             description: "YML Test Base Source Switcher"
             published: true

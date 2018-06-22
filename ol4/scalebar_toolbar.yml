@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_scalebar_toolbar:
-            title: yml_scalebar_toolbar
+        Scalebar_Toolbar:
+            title: Scalebar Toolbar
             screenshot: 'mapbender_user.png'
-            description: "YML Test ScaleBar in Toolbar"
+            description: "Test ScaleBar in Toolbar"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

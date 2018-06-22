@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_redlining_imageexport:
-            title: yml_redlining_imageexport
+        Redlining_Imageexport:
+            title: Redlining Imageexport
             screenshot: 'mapbender_user.png'
-            description: "YML Test Redlining with ImageExport"
+            description: "Test Redlining with ImageExport"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

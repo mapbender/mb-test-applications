@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_layertree_wo_groups_naked:
-            title: yml_layertree_wo_groups_naked
+        layertree_wo_groups_naked:
+            title: Layertree without groups (naked)
             screenshot:
-            description: "YML Test Layertree in Sidepane without Groups (naked)"
+            description: "Test Layertree in Sidepane without Groups (naked)"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

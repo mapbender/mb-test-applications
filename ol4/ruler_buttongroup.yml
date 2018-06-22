@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_ruler_buttongroup:
-            title: yml_ruler_buttongroup
+        Ruler_Buttongroup:
+            title: Ruler Buttongroup
             screenshot: 'mapbender_user.png'
-            description: "YML Test Area and Line Ruler in a Group"
+            description: "Test Area and Line Ruler in a button-group"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

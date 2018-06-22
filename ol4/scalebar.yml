@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_scalebar:
-            title: yml_scalebar
+        Scalebar:
+            title: Scalebar
             screenshot: 'mapbender_user.png'
-            description: "YML Test ScaleBar"
+            description: "Test ScaleBar"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

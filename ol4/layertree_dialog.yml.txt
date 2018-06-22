@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_layertree_dialog:
-            title: yml_layertree_dialog
+        Layertree_Dialog:
+            title: Layertree Dialog
             screenshot: 'mapbender_user.png'
-            description: "YML Test Layertree in Toolbar"
+            description: "Layertree in Dialog"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -95,11 +95,11 @@ parameters:
                         hideSelect: false
                         hideInfo: false
                         showHeader: true
-                        menu: 
+                        menu:
                             - layerremove
                             - opacity
                             - zoomtolayer
-                            - metadata  
+                            - metadata
 #                        useTheme: true
 #                        themes:
 #                            -  id: '19'

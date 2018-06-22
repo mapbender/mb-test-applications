@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_lineruler:
-            title: yml_lineruler
-            screenshot: 'mapbender_user.png'
-            description: "YML Test Line Ruler"
+        Lineruler:
+            title: Line Ruler
+            screenshot: ''
+            description: "Test Line Ruler"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

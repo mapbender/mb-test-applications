@@ -1,7 +1,7 @@
 parameters:
     applications:
-        yml_digitizer_all_features:
-            title: yml_digitizer_all_features
+        digitizer_all_features:
+            title: digitizer_all_features
             screenshot: 'mapbender_user.png'
             description: "YML Test Sidepane Digitizer All Feature Implementation"
             published: true

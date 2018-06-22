@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_about:
-            title: yml_about
+        About:
+            title: About Dialog
             screenshot:
-            description: "YML Test About Dialog in toolbar"
+            description: "Test About Dialog in toolbar"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

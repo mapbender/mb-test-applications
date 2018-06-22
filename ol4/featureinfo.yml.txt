@@ -1,7 +1,7 @@
 parameters:
     applications:
-        yml_featureinfo:
-            title: yml_featureinfo
+        featureinfo:
+            title: featureinfo
             screenshot:
             description: "YML Test FeatureInfo"
             published: true

@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_wms:
-            title: yml_wms
+        Wms_Loader:
+            title: Wms Loader
             screenshot: 'mapbender_user.png'
-            description: "YML Test WMS Loader"
+            description: "Test WMS Loader"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

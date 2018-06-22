@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_print_sidepane:
-            title: yml_print_sidepane
-            screenshot: 
-            description: "YML Test Print in Sidepane"
+        Print_Sidepane:
+            title: Print Sidepane
+            screenshot:
+            description: "Test Print in Sidepane"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

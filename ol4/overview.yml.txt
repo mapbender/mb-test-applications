@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_overview:
-            title: yml_overview
+        Overview:
+            title: Overview Map
             screenshot: 'mapbender_user.png'
-            description: "YML Test Overview Map"
+            description: "Test Overview Map"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

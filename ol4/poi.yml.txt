@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_poi:
-            title: yml_poi
-            screenshot: 'mapbender_user.png'
-            description: "YML Test POI"
+        Poi:
+            title: Poi
+            screenshot: ''
+            description: "Test POI"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

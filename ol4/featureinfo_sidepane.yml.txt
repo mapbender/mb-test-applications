@@ -1,7 +1,7 @@
 parameters:
     applications:
-        yml_featureinfo_sidepane:
-            title: yml_featureinfo_sidepane
+        featureinfo_sidepane:
+            title: featureinfo_sidepane
             screenshot:
             description: "YML Test FeatureInfo in Sidepane"
             published: true

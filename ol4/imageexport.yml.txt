@@ -1,7 +1,7 @@
 parameters:
     applications:
-        yml_imageexport:
-            title: yml_imageexport
+        imageexport:
+            title: imageexport
             screenshot:
             description: "YML Test Image Export"
             published: true

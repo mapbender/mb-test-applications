@@ -1,9 +1,9 @@
 parameters:
     applications:
-        yml_print:
-            title: yml_print
-            screenshot: 
-            description: "YML Test Print"
+        Print:
+            title: Print
+            screenshot:
+            description: "Test Print"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
