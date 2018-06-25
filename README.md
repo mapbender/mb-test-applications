@@ -38,6 +38,10 @@ imageexport.yml: Standard ImageExport application that captures .png or .jpg fil
 layertree_dialog.yml
 layertree_wo_groups_naked.yml:
 
+legend_naked: Pure legend application.
+legend_sidepane: Application with a legend embedded in the sidepane. All options are set "true".
+legend.yml: Standard legend application.
+
 lineruler_immediate:false_yml: LineRuler application with button in toolbar. It does not calculate the drawn line length immediately.
 lineruler_immediate_true.yml: LineRuler application with button in toolbar. It does calculate the drawn line length immediately.
 lineruler_naked.yml: Pure LineRuler with button in toolbar and additional options commented out in .yml (for testing).

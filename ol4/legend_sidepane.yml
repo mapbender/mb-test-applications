@@ -1,9 +1,9 @@
 parameters:
     applications:
-        legend:
-            title: Legend
+        Legend_Sidepane:
+            title: Legend Sidepane
             screenshot: 'mapbender_user.png'
-            description: "Test Legend"
+            description: "Test Legend in Sidepane"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -51,13 +51,6 @@ parameters:
                         opacity: 100
             elements:
                 toolbar:
-                    legend-button:
-                        title: Legend
-                        tooltip: Legend
-                        class: Mapbender\CoreBundle\Element\Button
-                        target: legend
-                        icon: iconLegend
-                        action: open
                 content:
                     map:
                         title: Main Map
@@ -81,20 +74,20 @@ parameters:
                         anchor: right-top
                         position: [200,40]
                         draggable: false
+                sidepane:
                     legend:
                         class: Mapbender\CoreBundle\Element\Legend
                         target: map
                         title: Legend
-                        elementType: dialog
-                        autoOpen: false
+                        elementType: element
+                        autoOpen: true
                         displayType: list
                         hideEmptyLayers: true
                         noLegend: "No legend available"
-                        generateLegendGraphic: false
+                        generateLegendGraphic: true
                         showWmsTitle: true
                         showLayerTitle: true
                         showGroupedLayerTitle: true
-                sidepane:
                     layertree:
                         title: Layertree
                         class: Mapbender\CoreBundle\Element\Layertree
