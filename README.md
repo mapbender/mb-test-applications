@@ -56,6 +56,13 @@ print_naked.yml: Pure PrintClient integration with toolbar button, all options i
 print_sidepane.yml: PrintClient integrated in Sidepane, with additional feature to turn frame on/off (& replace_pattern commented out)
 print.yml: Default PrintClient application with button in toolbar (& replace_pattern commented out).
 
+redlining_dialog_naked.yml: Pure redlining application, includes a button in the toolbar that heads to the redlining_dialog.
+redlining_imageexport.yml: Redlining and imageexport application to test the functionality between the elements.
+redlining_print.yml: Redlining and print application to test the functionality between the elements.
+redlining_sidepane_naked.yml: Pure redlining in the sidepane (application). Includes no other features.
+redlining_sidepane.yml: Default redlining in the sidepane (application). Has the default tools.
+
+
 ### ol4 directory
 
 Test cases for the OpenLayer 4 tests. They should still work with OL2 but if an element gets a new parameter or looses one, they might be only valid for OL4.
