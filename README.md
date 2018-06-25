@@ -53,6 +53,7 @@ overview_naked.yml: Pure overview application which includes all configurational
 overview.yml: Standard application which features an overview map in the documented configuration.
 
 
+
 ### ol4 directory
 
 Test cases for the OpenLayer 4 tests. They should still work with OL2 but if an element gets a new parameter or looses one, they might be only valid for OL4.
