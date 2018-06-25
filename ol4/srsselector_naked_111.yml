@@ -23,7 +23,7 @@ parameters:
                         visible: true
                         format: image/png
                         transparent: true
-                        tiled: true
+                        tiled: false
                         opacity: 100
             elements:
                 toolbar:
