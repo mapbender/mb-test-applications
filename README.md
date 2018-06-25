@@ -21,38 +21,40 @@ activityindicator_naked.yml: Simple application that provides the ActivityIndica
 arearuler_immediate_false.yml: AreaRuler application with button in toolbar. It does not calculate the drawn area immediately.
 arearuler_immediate_true.yml: AreaRuler application with button in toolbar. It does calculate the drawn area immediately.
 arearuler_naked.yml: Pure AreaRuler with button in toolbar and additional options commented out in .yml (for testing).
-arearuler.yml: Standard AreaRuler application with button in toolbar.
+arearuler.yml: Default AreaRuler application with button in toolbar.
 
 copyright_naked.yml: Pure Copyright application with additional options commented out in .yml (for testing).
-copyright.yml: Standard Copyright application which auto-opens the copyright popup and shows some fancy HTML.
+copyright.yml: Default Copyright application which auto-opens the copyright popup and shows some fancy HTML.
 
 digitizer_all_features.yml: Digitizer application which includes almost all documented digitizer options (https://doc.mapbender3.org/de/functions/editing/digitizer.html). Search for desired option in .yml for easy access. Clustering is commented out as it is an experimental feature. Events are not included.
-digitizer.yml: Standard digitizer configuration as published in Mapbender Documentation.
+digitizer.yml: Default digitizer configuration as published in Mapbender Documentation.
 
-gpsposition_naked.yml: Pure GPSPosition application. Provides the GPS-Element with a button in the toolbar. Standard configuration of options.
-gpsposition.yml: Standard GPSPosition application. Automatically zooms to your location if you open it.
+gpsposition_naked.yml: Pure GPSPosition application. Provides the GPS-Element with a button in the toolbar. Default configuration of options.
+gpsposition.yml: Default GPSPosition application. Automatically zooms to your location if you open it.
 
 imageexport_naked.yml: Pure ImageExport application.
-imageexport.yml: Standard ImageExport application that captures .png or .jpg files of the map.
+imageexport.yml: Default ImageExport application that captures .png or .jpg files of the map.
 
 layertree_dialog.yml
 layertree_wo_groups_naked.yml:
 
 legend_naked: Pure legend application.
 legend_sidepane: Application with a legend embedded in the sidepane. All options are set "true".
-legend.yml: Standard legend application.
+legend.yml: Default legend application.
 
-lineruler_immediate:false_yml: LineRuler application with button in toolbar. It does not calculate the drawn line length immediately.
+lineruler_immediate_false_yml: LineRuler application with button in toolbar. It does not calculate the drawn line length immediately.
 lineruler_immediate_true.yml: LineRuler application with button in toolbar. It does calculate the drawn line length immediately.
 lineruler_naked.yml: Pure LineRuler with button in toolbar and additional options commented out in .yml (for testing).
-lineruler: Standard LineRuler application with button in toolbar.
+lineruler: Default LineRuler application with button in toolbar.
 
 map_naked.yml: An application which features a map.
 
 overview_naked.yml: Pure overview application which includes all configurational options.
-overview.yml: Standard application which features an overview map in the documented configuration.
+overview.yml: Default application which features an overview map in the documented configuration.
 
-
+print_naked.yml: Pure PrintClient integration with toolbar button, all options integrated (replace_pattern commented out)
+print_sidepane.yml: PrintClient integrated in Sidepane, with additional feature to turn frame on/off (& replace_pattern commented out)
+print.yml: Default PrintClient application with button in toolbar (& replace_pattern commented out).
 
 ### ol4 directory
 
