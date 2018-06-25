@@ -14,8 +14,23 @@ To change an application and to see the results directly, open Mapbender in deve
 
 about_footer.yml: Simple application that provides an "About" button in the footer. The button opens a popup with a plain Mapbender version number.
 about.yml: Simple application that provides an "About" button in the toolbar. The button opens a popup with a plain Mapbender version number.
+
 activityindicator.yml: Simple application that provides the ActivityIndicator in the footer.
 activityindicator_naked.yml: Simple application that provides the ActivityIndicator in the footer. It hides behind the Symfony-Toolbar if you are in developer mode.
+
+arearuler_immediate_false.yml: Simple arearuler application with button in toolbar. It does not calculate the drawn area immediately.
+arearuler_immediate_true.yml: Simple arearuler application with button in toolbar. It does calculate the drawn area immediately.
+arearuler_naked.yml: Pure AreaRuler with button in toolbar and additional options commented out in .yml (for testing).
+arearuler.yml: Standard arearuler application with button in toolbar (no calculation included at all).
+
+copyright_naked.yml: Pure Copyright application with additional options commented out in .yml (for testing).
+copyright.yml: Simple Copyright application which auto-opens the copyright popup and shows some fancy HTML.
+
+digitizer_all_features: Digitizer application which includes almost all documented digitizer options (https://doc.mapbender3.org/de/functions/editing/digitizer.html). Search for desired option in .yml for easy access. Clustering is commented out as it is an experimental feature. Events are not included.
+digitizer.yml: Standard digitizer configuration as published in Mapbender Documentation.
+
+
+
 
 ### ol4 directory
 

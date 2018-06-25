@@ -1,0 +1,77 @@
+parameters:
+    applications:
+        copyright_naked:
+            title: Copyright (Naked)
+            screenshot:
+            description: "YML Test Copyright (Naked)"
+            published: true
+            template:  Mapbender\CoreBundle\Template\Fullscreen
+            regionProperties:
+                -
+                    name: sidepane
+                    properties: {"name": "accordion", "label": "mb.manager.template.region.accordion.label"}
+            layersets:
+                main:
+                    osm:
+                        class: Mapbender\WmsBundle\Entity\WmsInstance
+                        title: OSM Demo
+                        url: http://osm-demo.wheregroup.com/service # http://osm-demo.wheregroup.com/service?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities
+                        layers:
+                            30: { name: osm,    title : Germany OSM Demo WhereGroup,  visible: true }
+                        info_format: text/html
+                        visible: true
+                        format: image/png
+                        transparent: true
+                        tiled: true
+                        opacity: 100
+                overview:
+                    osm_overview:
+                        class: Mapbender\WmsBundle\Entity\WmsInstance
+                        title: OSM Demo
+                        url: http://osm-demo.wheregroup.com/service # http://osm-demo.wheregroup.com/service?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities
+                        layers:
+                            40: { name: osm,    title : Germany OSM Demo WhereGroup,  visible: true }
+                        tiled: false
+                        format: image/png
+                        transparent: true
+                        visible: true
+                        opacity: 100
+            elements:
+                toolbar:
+                    copyright-button:
+                        title: Copyright
+                        tooltip: Copyright
+                        class: Mapbender\CoreBundle\Element\Button
+                        label: true
+                        icon: icon-about
+                        target: copyright
+                content:
+                    map:
+                        title: Main Map
+                        class: Mapbender\CoreBundle\Element\Map
+                        layersets: [main]
+                        srs: EPSG:25832
+                        units: m
+                        extents:
+                            start: [361000,5619000,371150,5625000]
+                            max: [-500000,4350000,1600000,6850000]
+                        scales: [5000000,1000000,500000,100000,50000,25000,10000,7500,5000,2500,1000,500]
+                        maxResolution: 'auto'
+                        otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:900913","EPSG:4326"]
+                    copyright:
+                        class: Mapbender\CoreBundle\Element\Copyright
+                        title: "Copyright"
+                        tooltip: "Copyright"
+                        content: "<p>Lorem <b>ipsum</b> <i>dolor</i> <u>sit</u> <strong>amet</strong></p><p><marquee>consetetur</marquee></p><p>sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p><a href='http://www.mapbender3.org' target='_new'><img src='../../bundles/mapbendercore/image/logo_mb3.png'/></a></p><h1>At vero eos</h1><p><ul><li>Et</li><li>accusam</li><li>et justo</li><li></ul></p><p><ol><li>duo</li><li>dolores</li><li>et ea rebum.</li></ol></p><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>"
+#                        autoOpen: true
+#                        popupWidth: 600
+#                        popupHeight: 400
+#                        width: 200px
+#                        anchor: 'left-bottom'
+#                        position: array('0px','0px')
+#                        copyright_text: "© XXX # 2013"
+#                        copyright_link: "Terms of use"
+#                        dialog_title: "Terms of use"
+#                        dialog_content: "Terms of use (Content)"
+#                        link_url: 'http://example.de'
+#                        link_type: 'dialog'
