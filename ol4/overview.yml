@@ -71,8 +71,8 @@ parameters:
                         position: [15em, 3em]
                         stepsize: 50
                         stepbypixel: true
-                        anchor: right-top
-                        position: [200,40]
+                        anchor: right-bottom
+                        position: [400,40]
                         draggable: false
                     overview:
                        title: Overview
@@ -82,10 +82,10 @@ parameters:
                        layerset: overview
                        width: 200
                        height: 100
-                       anchor: 'right-bottom'
+                       anchor: 'right-top'
                        position: ['0px', '0px']
                        maximized: true
-                       fixed: false
+                       fixed: true
                 sidepane:
                     layertree:
                         title: Layertree
