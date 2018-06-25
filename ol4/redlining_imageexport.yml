@@ -1,9 +1,9 @@
 parameters:
     applications:
-        Redlining_Dialog:
-            title: Redlining Dialog
+        Redlining_Imageexport:
+            title: Redlining Imageexport
             screenshot: 'mapbender_user.png'
-            description: "Test Redlining with Dialog"
+            description: "Test Redlining with ImageExport"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -51,6 +51,14 @@ parameters:
                         opacity: 100
             elements:
                 toolbar:
+                    imageexport-button:
+                        title: Image Export
+                        tooltip: Image Export
+                        class: Mapbender\CoreBundle\Element\Button
+                        label: true
+                        icon: iconImageExport
+                        target: imageexport
+                        action: open
                 content:
                     map:
                         title: Main Map
@@ -74,6 +82,10 @@ parameters:
                         anchor: right-top
                         position: [200,40]
                         draggable: false
+                    imageexport:
+                        class: Mapbender\PrintBundle\Element\ImageExport
+                        target: map
+                sidepane:
                     redlining:
                         title: Redlining
                         class: Mapbender\CoreBundle\Element\Redlining
@@ -84,7 +96,7 @@ parameters:
                             - polygon
                             - text
                             - rectangle
-                        display_type: dialog
+                        display_type: element
                         auto_activate: true
                         deactivate_on_close: false
                     layertree:

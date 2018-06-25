@@ -62,6 +62,12 @@ redlining_print.yml: Redlining and print application to test the functionality b
 redlining_sidepane_naked.yml: Pure redlining in the sidepane (application). Includes no other features.
 redlining_sidepane.yml: Default redlining in the sidepane (application). Has the default tools.
 
+ruler_buttongroup.yml: Application that has both an area / line ruler in the toolbar. The elements are grouped, switching is possible. No live calculation while drawing.
+
+scalebar_naked.yml: Pure ScaleBar application.
+scalebar.yml: Default ScaleBar application.
+
+
 
 ### ol4 directory
 
