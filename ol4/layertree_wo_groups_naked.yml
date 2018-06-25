@@ -100,5 +100,5 @@ parameters:
                         titlemaxlength: 35
                         showBaseSource: true
                         layerRemove: true
-                        menu: [opacity,zoomtolayer,metadata]
+                        menu: [opacity,metadata,layerremove,zoomtolayer]
                 footer:
