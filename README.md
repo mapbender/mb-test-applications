@@ -19,3 +19,9 @@ Test cases for the OpenLayer 4 tests. They should still work with OL2 but if an 
 Most of the applications are built up the same: Map, Navigation Toolbar, buton-bar, footer and layertree in the sidebar. Most of them use the same services, like OSM and perhaps an internal one (where you might not have access to).
 
 The "naked" variants only contain the needed elements, like the map (of course) and the element itself. These tests are for testing without side-effects.
+
+
+
+### kombitest.json
+
+An internal testcase.
