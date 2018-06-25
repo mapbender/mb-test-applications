@@ -1,0 +1,71 @@
+parameters:
+    applications:
+        layertree_wo_groups_qgis_naked:
+            title: Layertree w/o groups and QGIS Style (naked)
+            screenshot:
+            description: "Test Layertree in Sidepane with Grouplayers in QGIS Style (naked)"
+            published: true
+            template:  Mapbender\CoreBundle\Template\Fullscreen
+            regionProperties:
+                -
+                    name: sidepane
+                    properties: {"name": "accordion", "label": "mb.manager.template.region.accordion.label"}
+            layersets:
+                main:
+                    schwalmtal_qgis:
+                        class: Mapbender\WmsBundle\Entity\WmsInstance
+                        title: Schwalmtal QGIS
+                        url: http://wms2016/cgi-bin/schwalmtal/qgis_mapserv.fcgi?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities
+                        layers:
+                            10: { name: Bohrungen, title: Bohrungen, visible: true, queryable: true }
+                            11: { name: Höhenlinien, title: Höhenlinien, visible: true, queryable: true }
+                            12: { name: Landnutzung, title: Landnutzung, visible: true, queryable: true }
+                            13: { name: bodenarten, title: bodenarten, visible: true, queryable: true }
+                        info_format: text/html
+                        visible: false
+                        format: image/png
+                        transparent: true
+                        tiled: false
+                        opacity: 85
+                        layerOrder: reverse # standard / reverse
+                    osm:
+                        class: Mapbender\WmsBundle\Entity\WmsInstance
+                        title: OSM Demo
+                        url: http://osm-demo.wheregroup.com/service # http://osm-demo.wheregroup.com/service?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities
+                        layers:
+                            40: { name: osm,    title : Germany OSM Demo WhereGroup,  visible: true }
+                        info_format: text/html
+                        visible: true
+                        format: image/png
+                        transparent: true
+                        tiled: true
+                        opacity: 100
+            elements:
+                toolbar:
+                content:
+                    map:
+                        title: Main Map
+                        class: Mapbender\CoreBundle\Element\Map
+                        layersets: [main]
+                        srs: EPSG:25832
+                        units: m
+                        extents:
+                            start: [306045, 5673390, 311006, 5676023]
+                            max: [-500000,4350000,1600000,6850000]
+                        scales: [5000000,1000000,500000,100000,50000,25000,10000,7500,5000,2500,1000,500]
+                        maxResolution: 'auto'
+                        otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:900913","EPSG:4326"]
+                sidepane:
+                    layertree:
+                        title: Layertree
+                        class: Mapbender\CoreBundle\Element\Layertree
+                        target: map
+                        type: element
+                        displaytype: tree
+                        useAccordion: true
+                        autoOpen: false
+                        titlemaxlength: 35
+                        showBaseSource: true
+                        layerRemove: true
+                        menu: [opacity,metadata,layerremove,zoomtolayer]
+                footer:
