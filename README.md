@@ -45,7 +45,8 @@ lineruler: Standard LineRuler application with button in toolbar.
 
 map_naked.yml: An application which features a map.
 
-overview.yml: Standard application which features an overview map.
+overview_naked.yml: Pure overview application which includes all configurational options.
+overview.yml: Standard application which features an overview map in the documented configuration.
 
 
 ### ol4 directory
