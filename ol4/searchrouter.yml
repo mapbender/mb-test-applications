@@ -109,6 +109,21 @@ parameters:
                                             buffer: 10
                                             minScale: null
                                             maxScale: null
+                                    styleMap:
+                                        default:
+                                            strokeColor: '#00ff00'  # Umrandungsfarbe
+                                            strokeOpacity: 1        # 1 - opak (keine Transparenz)
+                                            strokeWidth: 3          # Umrandingsbreite
+                                            fillColor: '#f0f0f0'    # Füllfarbe
+                                            fillOpacity: 0          # Opazität Füllung, voll transparent, daher keine Füllung
+                                            pointRadius: 6          # Größe des Punktsymbols
+                                        select:
+                                            strokeColor: '#0000ff'
+                                            strokeOpacity: 1
+                                            strokeWidth: 4
+                                            fillColor: '#ff00ff'
+                                            fillOpacity: 0.8
+                                            pointRadius: 10                                            
                                 title: 'Geographische Namen'
                 sidepane:
                     layertree:

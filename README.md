@@ -64,10 +64,34 @@ redlining_sidepane.yml: Default redlining in the sidepane (application). Has the
 
 ruler_buttongroup.yml: Application that has both an area / line ruler in the toolbar. The elements are grouped, switching is possible. No live calculation while drawing.
 
+scalebar_footer.yml: Application that includes a scalebar in the footer.
 scalebar_naked.yml: Pure ScaleBar application.
+scalebar_toolbar.yml:
+Application that includes a scalebar in the toolbar.
 scalebar.yml: Default ScaleBar application.
 
+scaledisplay_footer.yml: Application that includes a ScaleDisplay in the footer.
+scaledisplay_naked.yml: Pure ScaleDisplay application.
+scaledisplay_toolbar.yml: Application that includes a scalebar in the toolbar.
+scaledisplay.yml: Default ScaleDisplay application.
 
+searchrouter_naked.yml:
+searchrouter.yml:
+
+sketch_naked.yml:
+
+srsselector_111_tiled_false_naked.yml:
+srsselector_111_tiled_true_naked.yml:
+srsselector_130_tiled_false_naked.yml:
+srsselector_130_tiled_true_naked.yml:
+
+suggestmap.yml:
+
+wmc_test.yml:
+wmc.yml:
+
+wms_loader_naked.yml:
+wms_loader.yml:
 
 ### ol4 directory
 
