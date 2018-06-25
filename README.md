@@ -18,18 +18,34 @@ about.yml: Simple application that provides an "About" button in the toolbar. Th
 activityindicator.yml: Simple application that provides the ActivityIndicator in the footer.
 activityindicator_naked.yml: Simple application that provides the ActivityIndicator in the footer. It hides behind the Symfony-Toolbar if you are in developer mode.
 
-arearuler_immediate_false.yml: Simple arearuler application with button in toolbar. It does not calculate the drawn area immediately.
-arearuler_immediate_true.yml: Simple arearuler application with button in toolbar. It does calculate the drawn area immediately.
+arearuler_immediate_false.yml: AreaRuler application with button in toolbar. It does not calculate the drawn area immediately.
+arearuler_immediate_true.yml: AreaRuler application with button in toolbar. It does calculate the drawn area immediately.
 arearuler_naked.yml: Pure AreaRuler with button in toolbar and additional options commented out in .yml (for testing).
-arearuler.yml: Standard arearuler application with button in toolbar (no calculation included at all).
+arearuler.yml: Standard AreaRuler application with button in toolbar.
 
 copyright_naked.yml: Pure Copyright application with additional options commented out in .yml (for testing).
-copyright.yml: Simple Copyright application which auto-opens the copyright popup and shows some fancy HTML.
+copyright.yml: Standard Copyright application which auto-opens the copyright popup and shows some fancy HTML.
 
-digitizer_all_features: Digitizer application which includes almost all documented digitizer options (https://doc.mapbender3.org/de/functions/editing/digitizer.html). Search for desired option in .yml for easy access. Clustering is commented out as it is an experimental feature. Events are not included.
+digitizer_all_features.yml: Digitizer application which includes almost all documented digitizer options (https://doc.mapbender3.org/de/functions/editing/digitizer.html). Search for desired option in .yml for easy access. Clustering is commented out as it is an experimental feature. Events are not included.
 digitizer.yml: Standard digitizer configuration as published in Mapbender Documentation.
 
+gpsposition_naked.yml: Pure GPSPosition application. Provides the GPS-Element with a button in the toolbar. Standard configuration of options.
+gpsposition.yml: Standard GPSPosition application. Automatically zooms to your location if you open it.
 
+imageexport_naked.yml: Pure ImageExport application.
+imageexport.yml: Standard ImageExport application that captures .png or .jpg files of the map.
+
+layertree_dialog.yml
+layertree_wo_groups_naked.yml:
+
+lineruler_immediate:false_yml: LineRuler application with button in toolbar. It does not calculate the drawn line length immediately.
+lineruler_immediate_true.yml: LineRuler application with button in toolbar. It does calculate the drawn line length immediately.
+lineruler_naked.yml: Pure LineRuler with button in toolbar and additional options commented out in .yml (for testing).
+lineruler: Standard LineRuler application with button in toolbar.
+
+map_naked.yml: An application which features a map.
+
+overview.yml: Standard application which features an overview map.
 
 
 ### ol4 directory
