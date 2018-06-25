@@ -90,8 +90,8 @@ suggestmap.yml:
 wmc_test.yml:
 wmc.yml:
 
-wms_loader_naked.yml:
-wms_loader.yml:
+wms_loader_naked.yml: Pure WMS Loader application.
+wms_loader.yml: Default WMS loader application.
 
 ### ol4 directory
 
