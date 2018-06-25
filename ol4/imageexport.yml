@@ -1,9 +1,9 @@
 parameters:
     applications:
-        Export_Image:
-            title: Export Image
+        ImageExport:
+            title: Image Export
             screenshot:
-            description: "YML Test Export Image."
+            description: "YML Test Image Export."
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

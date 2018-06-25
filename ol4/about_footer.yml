@@ -51,12 +51,6 @@ parameters:
                         opacity: 100
             elements:
                 toolbar:
-                    # about:
-                    #     title: About
-                    #     tooltip: About
-                    #     label: true
-                    #     icon: icon-about
-                    #     class: Mapbender\CoreBundle\Element\AboutDialog
                 content:
                     map:
                         title: Main Map
