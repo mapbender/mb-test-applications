@@ -1,9 +1,9 @@
 parameters:
     applications:
-        srsselector_naked_130:
-            title: srsselector_naked_130
+        srsselector_111_tiled_true_naked:
+            title: SRSSelector WMS 111 Tiled True (naked)
             screenshot:
-            description: "Test SrsSelector WMS 1.3.0 (naked)"
+            description: "Test SrsSelector WMS 1.1.1 Tiled True (naked)"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -16,7 +16,7 @@ parameters:
                         class: Mapbender\WmsBundle\Entity\WmsInstance
                         title: OSM Demo
                         url: http://osm-demo.wheregroup.com/service?
-                        version: 1.3.0
+                        version: 1.1.1
                         layers:
                             30: { name: osm,    title : Germany OSM Demo WhereGroup,  visible: true }
                         info_format: text/html
