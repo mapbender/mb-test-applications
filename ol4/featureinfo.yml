@@ -28,7 +28,7 @@ parameters:
                     hochwasser:
                         class: Mapbender\WmsBundle\Entity\WmsInstance
                         title: Hochwasser Gefahrenkarte
-                        url: http://www.wms.nrw.de/umwelt/wasser/HW_Gefahrenkarte.map # http://www.wms.nrw.de/umwelt/wasser/HW_Gefahrenkarte?REQUEST=GetCapabilities&SERVICE=WMS
+                        url: http://www.wms.nrw.de/umwelt/HW_Gefahrenkarte # http://www.wms.nrw.de/umwelt/wasser/HW_Gefahrenkarte?REQUEST=GetCapabilities&SERVICE=WMS
                         layers:
                             13: { name: 13,   title: Überschwemmungsgrenze der Gebiete ohne technischen Hochwasserschutz, visible: true, queryable: true  }
                             14: { name: 14,   title: Tiefen überschwemmungsgefährdete Gebiete, visible: true, queryable: true  }
@@ -38,7 +38,7 @@ parameters:
                         visible: true
                         format: image/png
                         transparent: true
-                        tiled: true
+                        tiled: false
                         opacity: 100
                     schwalmtal:
                         class: Mapbender\WmsBundle\Entity\WmsInstance
