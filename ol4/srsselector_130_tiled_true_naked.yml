@@ -1,0 +1,50 @@
+parameters:
+    applications:
+        srsselector_130_tiled_true_naked:
+            title: SRS Selector WMS 130 tiled true (naked)
+            screenshot:
+            description: "Test SrsSelector WMS 1.3.0, Tiled True (naked)"
+            published: true
+            template:  Mapbender\CoreBundle\Template\Fullscreen
+            regionProperties:
+                -
+                    name: sidepane
+                    properties: {"name": "accordion", "label": "mb.manager.template.region.accordion.label"}
+            layersets:
+                main:
+                    osm:
+                        class: Mapbender\WmsBundle\Entity\WmsInstance
+                        title: OSM Demo
+                        url: http://osm-demo.wheregroup.com/service?
+                        version: 1.3.0
+                        layers:
+                            30: { name: osm,    title : Germany OSM Demo WhereGroup,  visible: true }
+                        info_format: text/html
+                        visible: true
+                        format: image/png
+                        transparent: true
+                        tiled: true
+                        opacity: 100
+            elements:
+                toolbar:
+                content:
+                    map:
+                        title: Main Map
+                        class: Mapbender\CoreBundle\Element\Map
+                        layersets: [main]
+                        srs: EPSG:25832
+                        units: m
+                        extents:
+                            start: [361000,5619000,371150,5625000]
+                            max: [-500000,4350000,1600000,6850000]
+                        scales: [5000000,1000000,500000,100000,50000,25000,10000,7500,5000,2500,1000,500]
+                        maxResolution: 'auto'
+                        otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:3857","EPSG:4326"]
+                sidepane:
+                footer:
+                    srs:
+                        class: Mapbender\CoreBundle\Element\SrsSelector
+                        title: SRS Selector
+                        tooltip: SRS Selector
+                        label: false
+                        target: map
