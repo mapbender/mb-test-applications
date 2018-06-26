@@ -1,9 +1,9 @@
 parameters:
     applications:
-        srsselector_130_tiled_true_naked:
-            title: SRS Selector WMS 130 tiled true (naked)
-            screenshot:
-            description: "Test SrsSelector WMS 1.3.0, Tiled True (naked)"
+        GPSPosition_Bare:
+            title: GPSPosition (bare)
+            screenshot: 'mapbender_user.png'
+            description: "Test GPSPosition (bare)"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -15,8 +15,7 @@ parameters:
                     osm:
                         class: Mapbender\WmsBundle\Entity\WmsInstance
                         title: OSM Demo
-                        url: http://osm-demo.wheregroup.com/service?
-                        version: 1.3.0
+                        url: http://osm-demo.wheregroup.com/service # http://osm-demo.wheregroup.com/service?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities
                         layers:
                             30: { name: osm,    title : Germany OSM Demo WhereGroup,  visible: true }
                         info_format: text/html
@@ -25,8 +24,35 @@ parameters:
                         transparent: true
                         tiled: true
                         opacity: 100
+                overview:
+                    osm_overview:
+                        class: Mapbender\WmsBundle\Entity\WmsInstance
+                        title: OSM Demo
+                        url: http://osm-demo.wheregroup.com/service # http://osm-demo.wheregroup.com/service?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities
+                        layers:
+                            40: { name: osm,    title : Germany OSM Demo WhereGroup,  visible: true }
+                        tiled: false
+                        format: image/png
+                        transparent: true
+                        visible: true
+                        opacity: 100
             elements:
                 toolbar:
+                    gps-button:
+                        class: Mapbender\CoreBundle\Element\GpsPosition
+                        label: true
+                        autoStart: false
+                        title: GPS-Position
+                        tooltip: Show GPS Position
+                        icon: iconGpsTarget
+                        target: map
+                        average: '1'
+                        refreshinterval: '5000'
+                        follow: false
+                        action: null
+                        centerOnFirstPosition: true
+                        zoomToAccuracy: false
+                        zoomToAccuracyOnFirstPosition: true
                 content:
                     map:
                         title: Main Map
@@ -42,9 +68,3 @@ parameters:
                         otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:3857","EPSG:4326"]
                 sidepane:
                 footer:
-                    srs:
-                        class: Mapbender\CoreBundle\Element\SrsSelector
-                        title: SRS Selector
-                        tooltip: SRS Selector
-                        label: false
-                        target: map

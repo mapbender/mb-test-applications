@@ -1,9 +1,9 @@
 parameters:
     applications:
-        basesourceswitcher_naked:
-            title: BaseSourceSwitcher (naked)
+        basesourceswitcher_bare:
+            title: BaseSourceSwitcher (bare)
             screenshot: 'mapbender_user.png'
-            description: "BaseSourceSwitcher (naked)"
+            description: "BaseSourceSwitcher (bare)"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

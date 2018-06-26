@@ -1,9 +1,9 @@
 parameters:
     applications:
-        srsselector_111_tiled_false_naked:
-            title: srsselector_111_tiled_false_naked
+        srsselector_111_tiled_true_bare:
+            title: SRSSelector WMS 111 Tiled True (bare)
             screenshot:
-            description: "Test SrsSelector WMS 1.1.1 Tiled False (naked)"
+            description: "Test SrsSelector WMS 1.1.1 Tiled True (bare)"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -23,7 +23,7 @@ parameters:
                         visible: true
                         format: image/png
                         transparent: true
-                        tiled: false
+                        tiled: true
                         opacity: 100
             elements:
                 toolbar:

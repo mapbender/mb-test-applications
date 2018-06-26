@@ -1,9 +1,9 @@
 parameters:
     applications:
-        Scalebar_Naked:
-            title: Scalebar (naked)
-            screenshot: 'mapbender_user.png'
-            description: "Test ScaleBar (naked)"
+        Redlining_Sidepane_bare:
+            title: Redlining Sidepane (bare)
+            screenshot: ''
+            description: "Test Redlining in Sidepane (bare)"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -24,18 +24,6 @@ parameters:
                         transparent: true
                         tiled: true
                         opacity: 100
-                overview:
-                    osm_overview:
-                        class: Mapbender\WmsBundle\Entity\WmsInstance
-                        title: OSM Demo
-                        url: http://osm-demo.wheregroup.com/service # http://osm-demo.wheregroup.com/service?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities
-                        layers:
-                            40: { name: osm,    title : Germany OSM Demo WhereGroup,  visible: true }
-                        tiled: false
-                        format: image/png
-                        transparent: true
-                        visible: true
-                        opacity: 100
             elements:
                 toolbar:
                 content:
@@ -51,12 +39,18 @@ parameters:
                         scales: [5000000,1000000,500000,100000,50000,25000,10000,7500,5000,2500,1000,500]
                         maxResolution: 'auto'
                         otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:3857","EPSG:4326"]
-                    scalebar:
-                        class: Mapbender\CoreBundle\Element\ScaleBar
-                        target: map
-                        anchor: 'left-bottom'
-                        position: ['20px', '20px']
-                        maxWidth: 400
-                        units: ['km']
                 sidepane:
+                    redlining:
+                        title: Redlining
+                        class: Mapbender\CoreBundle\Element\Redlining
+                        target: map
+                        geometrytypes:
+                            - point
+                            - line
+                            - polygon
+                            - text
+                            - rectangle
+                        display_type: element
+                        auto_activate: false
+                        deactivate_on_close: false
                 footer:

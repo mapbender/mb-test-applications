@@ -1,9 +1,9 @@
 parameters:
     applications:
-        arearuler_naked:
-            title: AreaRuler (Naked)
+        overview_bare:
+            title: Overview Map (Bare)
             screenshot: 'mapbender_user.png'
-            description: "YML Test Area Ruler (Naked)"
+            description: "Test Overview (Bare) Map"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -38,15 +38,6 @@ parameters:
                         opacity: 100
             elements:
                 toolbar:
-                    arearulerButton:
-                        title: Area Ruler
-                        tooltip: Area Ruler
-                        class: Mapbender\CoreBundle\Element\Button
-                        icon: icon-area-ruler
-                        label: true
-                        target: arearuler
-                        deactivate: deactivate
-                        group: rulers
                 content:
                     map:
                         title: Main Map
@@ -60,10 +51,17 @@ parameters:
                         scales: [5000000,1000000,500000,100000,50000,25000,10000,7500,5000,2500,1000,500]
                         maxResolution: 'auto'
                         otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:3857","EPSG:4326"]
-                    arearuler:
-                        title: Area
-                        tooltip: 'area'
-                        class: Mapbender\CoreBundle\Element\Ruler
-                        target: map
-                        type: area
-#                        immediate: true
+                    overview:
+                       title: Overview
+                       class: Mapbender\CoreBundle\Element\Overview
+                       tooltip: 'Overview'
+                       target: map
+                       layerset: overview
+                       width: 200
+                       height: 100
+                       anchor: 'right-top'
+                       position: ['0px', '0px']
+                       maximized: true
+                       fixed: false
+                sidepane:
+                footer:

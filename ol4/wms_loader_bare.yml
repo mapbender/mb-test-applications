@@ -1,9 +1,9 @@
 parameters:
     applications:
-        GPSPosition_Naked:
-            title: GPSPosition (naked)
+        Wms_Loader_bare:
+            title: Wms Loader (bare)
             screenshot: 'mapbender_user.png'
-            description: "Test GPSPosition (naked)"
+            description: "Test WMS Loader (bare)"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -38,21 +38,13 @@ parameters:
                         opacity: 100
             elements:
                 toolbar:
-                    gps-button:
-                        class: Mapbender\CoreBundle\Element\GpsPosition
-                        label: true
-                        autoStart: false
-                        title: GPS-Position
-                        tooltip: Show GPS Position
-                        icon: iconGpsTarget
-                        target: map
-                        average: '1'
-                        refreshinterval: '5000'
-                        follow: false
-                        action: null
-                        centerOnFirstPosition: true
-                        zoomToAccuracy: false
-                        zoomToAccuracyOnFirstPosition: true
+                    wmsloader-button:
+                        title: WMS Loader
+                        tooltip: WMS Loader
+                        class: Mapbender\CoreBundle\Element\Button
+                        target: wmsloader
+                        icon: iconWms
+                        action: open
                 content:
                     map:
                         title: Main Map
@@ -66,5 +58,15 @@ parameters:
                         scales: [5000000,1000000,500000,100000,50000,25000,10000,7500,5000,2500,1000,500]
                         maxResolution: 'auto'
                         otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:3857","EPSG:4326"]
+                    wmsloader:
+                        title: WMS Loader
+                        tooltip: 'WMS Loader'
+                        class: Mapbender\WmsBundle\Element\WmsLoader
+                        target: map
+                        autoOpen: false
+                        defaultFormat: 'image/png'
+                        defaultInfoFormat: 'text/html'
+                        splitLayers: false
+                        useDeclarative: true
                 sidepane:
                 footer:

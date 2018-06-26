@@ -1,9 +1,9 @@
 parameters:
     applications:
-        copyright_naked:
-            title: Copyright (Naked)
+        copyright_bare:
+            title: Copyright (Bare)
             screenshot:
-            description: "YML Test Copyright (Naked)"
+            description: "YML Test Copyright (Bare)"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

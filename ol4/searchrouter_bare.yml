@@ -1,9 +1,9 @@
 parameters:
     applications:
-        Searchrouter_Naked:
-            title: Searchrouter (naked)
+        Searchrouter_Bare:
+            title: Searchrouter (bare)
             screenshot: ''
-            description: "Test SearchRouter (naked)"
+            description: "Test SearchRouter (bare)"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

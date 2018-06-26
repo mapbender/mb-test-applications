@@ -1,9 +1,9 @@
 parameters:
     applications:
-        Print_Naked:
-            title: Print (Naked)
+        Print_Bare:
+            title: Print (Bare)
             screenshot:
-            description: "Test Print (Naked)"
+            description: "Test Print (Bare)"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

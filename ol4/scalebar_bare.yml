@@ -1,9 +1,9 @@
-parameters:
+iparameters:
     applications:
-        Wms_Loader_naked:
-            title: Wms Loader (naked)
+        Scalebar_Bare:
+            title: Scalebar (bare)
             screenshot: 'mapbender_user.png'
-            description: "Test WMS Loader (naked)"
+            description: "Test ScaleBar (bare)"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -38,13 +38,6 @@ parameters:
                         opacity: 100
             elements:
                 toolbar:
-                    wmsloader-button:
-                        title: WMS Loader
-                        tooltip: WMS Loader
-                        class: Mapbender\CoreBundle\Element\Button
-                        target: wmsloader
-                        icon: iconWms
-                        action: open
                 content:
                     map:
                         title: Main Map
@@ -58,15 +51,12 @@ parameters:
                         scales: [5000000,1000000,500000,100000,50000,25000,10000,7500,5000,2500,1000,500]
                         maxResolution: 'auto'
                         otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:3857","EPSG:4326"]
-                    wmsloader:
-                        title: WMS Loader
-                        tooltip: 'WMS Loader'
-                        class: Mapbender\WmsBundle\Element\WmsLoader
+                    scalebar:
+                        class: Mapbender\CoreBundle\Element\ScaleBar
                         target: map
-                        autoOpen: false
-                        defaultFormat: 'image/png'
-                        defaultInfoFormat: 'text/html'
-                        splitLayers: false
-                        useDeclarative: true
+                        anchor: 'left-bottom'
+                        position: ['20px', '20px']
+                        maxWidth: 400
+                        units: ['km']
                 sidepane:
                 footer:

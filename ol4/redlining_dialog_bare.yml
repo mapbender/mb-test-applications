@@ -1,9 +1,9 @@
 parameters:
     applications:
-        Redlining_Dialog_Naked:
-            title: Redlining Dialog (naked)
+        Redlining_Dialog_Bare:
+            title: Redlining Dialog (bare)
             screenshot: ''
-            description: "Test Redlining in a dialog (naked)"
+            description: "Test Redlining in a dialog (bare)"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:

@@ -1,9 +1,9 @@
 parameters:
     applications:
-        layertree_wo_groups_qgis_naked:
-            title: Layertree w/o groups and QGIS Style (naked)
+        layertree_wo_groups_qgis_bare:
+            title: Layertree w/o groups and QGIS Style (bare)
             screenshot:
-            description: "Test Layertree in Sidepane without Grouplayers in QGIS Style (naked)"
+            description: "Test Layertree in Sidepane without Grouplayers in QGIS Style (bare)"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
