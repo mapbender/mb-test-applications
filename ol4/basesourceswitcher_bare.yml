@@ -137,8 +137,16 @@ parameters:
                         tooltip: BaseSourceSwitcher
                         target: map
                         sourcesets:
-                            - { title: topplus, group: luftbild, sources: [main]}
-                            - { title: osm, group: luftbild, sources: [main]}
+                            - {title: topplus, sources: [topplus]}
+                            - {title: osm, sources: [osm]}
+                            # 1:
+                            #     title: topplus
+                            #     group: luftbild
+                            #     sources: [topplus]
+                            # 2:
+                            #     title: osm,
+                            #     group: luftbild,
+                            #     sources: [osm]
                 content:
                     map:
                         title: Main Map
