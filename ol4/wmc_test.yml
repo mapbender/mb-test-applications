@@ -1,9 +1,9 @@
 parameters:
     applications:
-        Print_Sidepane:
-            title: Print Sidepane
-            screenshot:
-            description: "Test Print in Sidepane"
+        Wmc_test:
+            title: wmc_test
+            screenshot: 'mapbender_user.png'
+            description: "YML Test WMC Editor, WMC List and WMC Loader in different combinations"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -51,6 +51,22 @@ parameters:
                         opacity: 100
             elements:
                 toolbar:
+#                    wmcloader-button:
+#                        title: WMC Loader
+#                        tooltip: WMC Loader
+#                        class: Mapbender\CoreBundle\Element\Button
+#                        target: wmcloader
+#                        icon: iconWmcLoader
+#                        label: true
+#                        action: open
+                    wmceditor-button:
+                        title: WMC Editor
+                        tooltip: WMC Editor
+                        class: Mapbender\CoreBundle\Element\Button
+                        target: wmceditor
+                        icon: iconWmcEditor
+                        label: true
+                        action: open
                 content:
                     map:
                         title: Main Map
@@ -63,7 +79,7 @@ parameters:
                             max: [-500000,4350000,1600000,6850000]
                         scales: [5000000,1000000,500000,100000,50000,25000,10000,7500,5000,2500,1000,500]
                         maxResolution: 'auto'
-                        otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:900913","EPSG:4326"]
+                        otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:3857","EPSG:4326"]
                     zoombar:
                         class: Mapbender\CoreBundle\Element\ZoomBar
                         target: map
@@ -74,58 +90,41 @@ parameters:
                         anchor: right-top
                         position: [200,40]
                         draggable: false
+                    wmceditor:
+                        title: WMC Editor
+                        class: Mapbender\WmcBundle\Element\WmcEditor
+                        tooltip: WMC Editor
+                        target: map
+                        #accessGroups: [0,1]
                 sidepane:
-                    printclient:
-                        class: Mapbender\CoreBundle\Element\PrintClient
+                    wmcloader:
+                        title: WMC Loader
+                        class: Mapbender\WmcBundle\Element\WmcLoader
+                        tooltip: WMC Loader
                         target: map
                         type: element
-                        file_prefix: mapbender3
-                        templates:
-                            - { template: a4_portrait_offical, label: A4 Portrait Official}
-                            - { template: a4_landscape_offical, label: A4 Landscape Official}
-                            - { template: a4portrait, label: A4 Portrait}
-                            - { template: a4landscape, label: A4 Landscape}
-                            - { template: a3_portrait_offical, label: A3 Portrait Official}
-                            - { template: a3_landscape_offical, label: A3 Landscape Official}
-                            - { template: a3portrait, label: A3 Portrait}
-                            - { template: a3landscape, label: A3 Landscape}
-                            - { template: a2_landscape_offical, label: A2 Landscape Official}
-                            - { template: a1_landscape_offical, label: A1 Landscape Official}
-                            - { template: a0_landscape_offical, label: A0 Landscape Official}
-                        scales: [500, 1000, 5000, 10000, 25000, 50000]
-                        quality_levels:
-                            - { dpi: 72 , label: Draft (72dpi)}
-                            - { dpi: 288,  label: Document (288dpi)}
-                        rotatable: true
-                        legend: true
-                        legend_default_behaviour: false
-                        optional_fields:
-                            title:
-                                label: Title              # label of the optional field
-                                options:                  #
-                                    required: true        # true or false
-                            comment1:
-                                label: Kommentar1
-                                options:
-                                    { required: false }
-                            comment2:
-                                label: Kommentar2
-                                options:
-                                    { required: false }
-                        # replace_pattern:
+                        components:  ['wmcidloader', 'wmclistloader', 'wmcxmlloader', 'wmcurlloader'] #['idloader', 'listloader', 'wmcloader']
+                        keepSources: allsources
+                        keepExtent: false
                     layertree:
                         title: Layertree
                         class: Mapbender\CoreBundle\Element\Layertree
                         target: map
                         type: element
                         displaytype: tree
-                        useAccordion: false
+                        useAccordion: true
                         autoOpen: false
-                        titlemaxlength: 30
+                        titlemaxlength: 40
                         showBaseSource: true
                         layerRemove: true
                         menu: [opacity,zoomtolayer,metadata]
                 footer:
+                    wmclist:
+                        title: WMC List
+                        tooltip: WMC List
+                        class: Mapbender\WmcBundle\Element\WmcList
+                        target: wmcloader
+                        label: false
                     activityindicator:
                         class: Mapbender\CoreBundle\Element\ActivityIndicator
                         title: Activity Indicator

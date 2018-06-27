@@ -1,9 +1,9 @@
 parameters:
     applications:
-        Lineruler_it:
-            title: Lineruler Immediate true
-            screenshot: 'mapbender_user.png'
-            description: "Test Line Rule Immediate True"
+        ImageExport:
+            title: Image Export
+            screenshot:
+            description: "YML Test Image Export."
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -51,15 +51,14 @@ parameters:
                         opacity: 100
             elements:
                 toolbar:
-                    linerulerButton:
-                        title: Line Ruler
-                        tooltip: Line Ruler
+                    imageexport-button:
+                        title: Image Export
+                        tooltip: Image Export
                         class: Mapbender\CoreBundle\Element\Button
-                        icon: icon-line-ruler
                         label: true
-                        target: lineruler
-                        deactivate: deactivate
-                        group: rulers
+                        icon: iconImageExport
+                        target: imageexport
+                        action: open
                 content:
                     map:
                         title: Main Map
@@ -77,18 +76,15 @@ parameters:
                         class: Mapbender\CoreBundle\Element\ZoomBar
                         target: map
                         components: ["pan","history","zoom_box","zoom_max","zoom_slider"]
+                        position: [15em, 3em]
                         stepsize: 50
                         stepbypixel: true
                         anchor: right-top
                         position: [200,40]
                         draggable: false
-                    lineruler:
-                        title: Distance
-                        tooltip: 'ruler'
-                        class: Mapbender\CoreBundle\Element\Ruler
+                    imageexport:
+                        class: Mapbender\PrintBundle\Element\ImageExport
                         target: map
-                        type: line
-                        immediate: true
                 sidepane:
                     layertree:
                         title: Layertree
@@ -96,9 +92,9 @@ parameters:
                         target: map
                         type: element
                         displaytype: tree
-                        useAccordion: true
+                        useAccordion: false
                         autoOpen: false
-                        titlemaxlength: 40
+                        titlemaxlength: 30
                         showBaseSource: true
                         layerRemove: true
                         menu: [opacity,zoomtolayer,metadata]

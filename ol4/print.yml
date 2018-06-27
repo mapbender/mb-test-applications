@@ -1,9 +1,9 @@
 parameters:
     applications:
-        About_Html:
-            title: About HTML Button in Toolbar
-            screenshot: 'mapbender_user.png'
-            description: "Test About Dialog Button in toolbar"
+        Print:
+            title: Print
+            screenshot:
+            description: "Test Print"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -51,12 +51,14 @@ parameters:
                         opacity: 100
             elements:
                 toolbar:
-                    about:
-                        title: About
-                        tooltip: About
+                    print-button:
+                        title: Print
+                        tooltip: Print PDF
+                        class: Mapbender\CoreBundle\Element\Button
                         label: true
-                        icon: icon-about
-                        class: Mapbender\CoreBundle\Element\AboutDialog
+                        icon: iconPrint
+                        target: printclient
+                        action: open
                 content:
                     map:
                         title: Main Map
@@ -69,7 +71,7 @@ parameters:
                             max: [-500000,4350000,1600000,6850000]
                         scales: [5000000,1000000,500000,100000,50000,25000,10000,7500,5000,2500,1000,500]
                         maxResolution: 'auto'
-                        otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:900913","EPSG:4326"]
+                        otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:3857","EPSG:4326"]
                     zoombar:
                         class: Mapbender\CoreBundle\Element\ZoomBar
                         target: map
@@ -80,6 +82,49 @@ parameters:
                         anchor: right-top
                         position: [200,40]
                         draggable: false
+                    printclient:
+                        class: Mapbender\CoreBundle\Element\PrintClient
+                        target: map
+                        type: dialog
+                        file_prefix: mapbender3
+                        templates:
+                            - { template: a4_portrait_offical, label: A4 Portrait Official}
+                            - { template: a4_landscape_offical, label: A4 Landscape Official}
+                            - { template: a4portrait, label: A4 Portrait}
+                            - { template: a4landscape, label: A4 Landscape}
+                            - { template: a3_portrait_offical, label: A3 Portrait Official}
+                            - { template: a3_landscape_offical, label: A3 Landscape Official}
+                            - { template: a3portrait, label: A3 Portrait}
+                            - { template: a3landscape, label: A3 Landscape}
+                            - { template: a2_landscape_offical, label: A2 Landscape Official}
+                            - { template: a1_landscape_offical, label: A1 Landscape Official}
+                            - { template: a0_landscape_offical, label: A0 Landscape Official}
+                        scales: [500, 1000, 5000, 10000, 25000, 50000]
+                        quality_levels:
+                            - { dpi: 72 , label: Draft (72dpi)}
+                            - { dpi: 288,  label: Document (288dpi)}
+                        rotatable: true
+                        legend: true
+                        legend_default_behaviour: false
+                        optional_fields:
+                            title:
+                                label: Title              # label of the optional field
+                                options:                  #
+                                    required: true        # true or false
+                            comment1:
+                                label: Kommentar1
+                                options:
+                                    { required: false }
+                            comment2:
+                                label: Kommentar2
+                                options:
+                                    { required: false }
+#                            replace_pattern:                 # You can modify the map-request for printing
+#                                -                        # you can add additional parameters like map_resolution (for MapServer)
+#                                    default: { 288: '&map_resolution=288' }
+#                                -
+#                                    pattern: 'stadtplan.xml'        # or you can request a different service which is optimized for printing
+#                                    replacement: { 288: 'stadtplan_4.xml' }# replace_pattern:                        # replace_pattern:
                 sidepane:
                     layertree:
                         title: Layertree
@@ -87,9 +132,9 @@ parameters:
                         target: map
                         type: element
                         displaytype: tree
-                        useAccordion: true
+                        useAccordion: false
                         autoOpen: false
-                        titlemaxlength: 40
+                        titlemaxlength: 30
                         showBaseSource: true
                         layerRemove: true
                         menu: [opacity,zoomtolayer,metadata]
@@ -121,14 +166,3 @@ parameters:
                         tooltip: Scale Selector
                         label: false
                         target: map
-                    copyrightButton:
-                        title: © OpenStreetMap contributors
-                        tooltip: Line Ruler
-                        class: Mapbender\CoreBundle\Element\Button
-                        label: true
-                        click: http://www.openstreetmap.org/copyright
-                    HTML:
-                        title: HTML
-                        class: Mapbender\CoreBundle\Element\HTMLElement
-                        content: '<div style="color: #6FB536; font-weight:bold" >powered by Mapbender</div>'
-                        classes: html-element-inline

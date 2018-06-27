@@ -1,9 +1,9 @@
 parameters:
     applications:
-        Wmc_Editor_List_Loader:
-            title: Wmc Editor, List and Loader
+        Redlining_Imageexport:
+            title: Redlining Imageexport
             screenshot: 'mapbender_user.png'
-            description: "Test WMC Editor, WMC List and WMC Loader"
+            description: "Test Redlining with ImageExport"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -51,27 +51,13 @@ parameters:
                         opacity: 100
             elements:
                 toolbar:
-                    wmclist:
-                        title: WMC List
-                        tooltip: WMC List
-                        class: Mapbender\WmcBundle\Element\WmcList
-                        target: wmcloader
-                        label: false
-                    wmcloader-button:
-                        title: WMC Loader
-                        tooltip: WMC Loader
+                    imageexport-button:
+                        title: Image Export
+                        tooltip: Image Export
                         class: Mapbender\CoreBundle\Element\Button
-                        target: wmcloader
-                        icon: iconWmcLoader
                         label: true
-                        action: open
-                    wmceditor-button:
-                        title: WMC Editor
-                        tooltip: WMC Editor
-                        class: Mapbender\CoreBundle\Element\Button
-                        target: wmceditor
-                        icon: iconWmcEditor
-                        label: true
+                        icon: iconImageExport
+                        target: imageexport
                         action: open
                 content:
                     map:
@@ -85,7 +71,7 @@ parameters:
                             max: [-500000,4350000,1600000,6850000]
                         scales: [5000000,1000000,500000,100000,50000,25000,10000,7500,5000,2500,1000,500]
                         maxResolution: 'auto'
-                        otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:900913","EPSG:4326"]
+                        otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:3857","EPSG:4326"]
                     zoombar:
                         class: Mapbender\CoreBundle\Element\ZoomBar
                         target: map
@@ -96,21 +82,23 @@ parameters:
                         anchor: right-top
                         position: [200,40]
                         draggable: false
-                    wmceditor:
-                        title: WMC Editor
-                        class: Mapbender\WmcBundle\Element\WmcEditor
-                        tooltip: WMC Editor
+                    imageexport:
+                        class: Mapbender\PrintBundle\Element\ImageExport
                         target: map
-                        accessGroups: [0,1]
-                    wmcloader:
-                        title: WMC Loader
-                        class: Mapbender\WmcBundle\Element\WmcLoader
-                        tooltip: WMC Loader
-                        target: map
-                        components:  ['wmcidloader', 'wmclistloader', 'wmcxmlloader', 'wmcurlloader'] #['idloader', 'listloader', 'wmcloader']
-                        keepSources: false #allsources
-                        keepExtent: false
                 sidepane:
+                    redlining:
+                        title: Redlining
+                        class: Mapbender\CoreBundle\Element\Redlining
+                        target: map
+                        geometrytypes:
+                            - point
+                            - line
+                            - polygon
+                            - text
+                            - rectangle
+                        display_type: element
+                        auto_activate: true
+                        deactivate_on_close: false
                     layertree:
                         title: Layertree
                         class: Mapbender\CoreBundle\Element\Layertree

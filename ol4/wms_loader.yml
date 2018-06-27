@@ -1,9 +1,9 @@
 parameters:
     applications:
-        Overview:
-            title: Overview Map
+        Wms_Loader:
+            title: Wms Loader
             screenshot: 'mapbender_user.png'
-            description: "Test Overview Map"
+            description: "Test WMS Loader"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -12,19 +12,6 @@ parameters:
                     properties: {"name": "accordion", "label": "mb.manager.template.region.accordion.label"}
             layersets:
                 main:
-                    mapbender_users:
-                        class: Mapbender\WmsBundle\Entity\WmsInstance
-                        title: Mapbender Users
-                        url: http://wms.wheregroup.com/cgi-bin/mapbender_user.xml # http://wms.wheregroup.com/cgi-bin/mapbender_user.xml?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities
-                        layers:
-                            10: { name: Mapbender_User,    title : User, visible: true, legendurl: http://wms.wheregroup.com/cgi-bin/mapbender_user.xml?REQUEST=GetLegendGraphic&VERSION=1.1.1&SERVICE=WMS&Layer=Mapbender_User&FORMAT=image/png }
-                            22: { name: Mapbender_Names,   title : Name, visible: true, queryable: true}
-                        info_format: text/html
-                        visible: true
-                        format: image/png
-                        transparent: true
-                        tiled: false
-                        opacity: 85
                     osm:
                         class: Mapbender\WmsBundle\Entity\WmsInstance
                         title: OSM Demo
@@ -51,6 +38,13 @@ parameters:
                         opacity: 100
             elements:
                 toolbar:
+                    wmsloader-button:
+                        title: WMS Loader
+                        tooltip: WMS Loader
+                        class: Mapbender\CoreBundle\Element\Button
+                        target: wmsloader
+                        icon: iconWms
+                        action: open
                 content:
                     map:
                         title: Main Map
@@ -63,7 +57,7 @@ parameters:
                             max: [-500000,4350000,1600000,6850000]
                         scales: [5000000,1000000,500000,100000,50000,25000,10000,7500,5000,2500,1000,500]
                         maxResolution: 'auto'
-                        otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:900913","EPSG:4326"]
+                        otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:3857","EPSG:4326"]
                     zoombar:
                         class: Mapbender\CoreBundle\Element\ZoomBar
                         target: map
@@ -74,18 +68,16 @@ parameters:
                         anchor: right-top
                         position: [200,40]
                         draggable: false
-                    overview:
-                       title: Overview
-                       class: Mapbender\CoreBundle\Element\Overview
-                       tooltip: 'Overview'
-                       target: map
-                       layerset: overview
-                       width: 200
-                       height: 100
-                       anchor: 'right-bottom'
-                       position: ['0px', '0px']
-                       maximized: true
-                       fixed: false
+                    wmsloader:
+                        title: WMS Loader
+                        tooltip: 'WMS Loader'
+                        class: Mapbender\WmsBundle\Element\WmsLoader
+                        target: map
+                        autoOpen: false
+                        defaultFormat: 'image/png'
+                        defaultInfoFormat: 'text/html'
+                        splitLayers: false
+                        useDeclarative: true
                 sidepane:
                     layertree:
                         title: Layertree
@@ -93,9 +85,9 @@ parameters:
                         target: map
                         type: element
                         displaytype: tree
-                        useAccordion: false
+                        useAccordion: true
                         autoOpen: false
-                        titlemaxlength: 30
+                        titlemaxlength: 40
                         showBaseSource: true
                         layerRemove: true
                         menu: [opacity,zoomtolayer,metadata]

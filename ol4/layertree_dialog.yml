@@ -1,9 +1,9 @@
 parameters:
     applications:
-        featureinfo:
-            title: featureinfo
-            screenshot:
-            description: "YML Test FeatureInfo"
+        Layertree_Dialog:
+            title: Layertree Dialog
+            screenshot: 'mapbender_user.png'
+            description: "Layertree in Dialog"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -51,15 +51,14 @@ parameters:
                         opacity: 100
             elements:
                 toolbar:
-                    fi-button:
-                        title: Feature Info
-                        tooltip: Feature Info
+                    layertree-button:
+                        title: Layertree
+                        tooltip: Layertree
                         class: Mapbender\CoreBundle\Element\Button
-                        icon: iconInfoActive
                         label: true
-                        target: featureinfo
-                        deactivate: deactivate
-                        group: featureinfo
+                        icon: iconLayertree
+                        target: layertreedialog
+                        action: open
                 content:
                     map:
                         title: Main Map
@@ -72,7 +71,7 @@ parameters:
                             max: [-500000,4350000,1600000,6850000]
                         scales: [5000000,1000000,500000,100000,50000,25000,10000,7500,5000,2500,1000,500]
                         maxResolution: 'auto'
-                        otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:900913","EPSG:4326"]
+                        otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:3857","EPSG:4326"]
                     zoombar:
                         class: Mapbender\CoreBundle\Element\ZoomBar
                         target: map
@@ -83,33 +82,39 @@ parameters:
                         anchor: right-top
                         position: [200,40]
                         draggable: false
-                    featureinfo:
-                        class: Mapbender\CoreBundle\Element\FeatureInfo
-                        title: FeatureInfo
-                        tooltip: 'Feature Info Dialog'
-                        type: dialog
-                        target: map
-                        autoActivate: false
-                        deactivateOnClose: false
-                        onlyValid: true
-                        displayType: tabs
-                        printResult: true
-                        showOriginal: true
-                        width: 500
-                        height: 500
-                sidepane:
-                    layertree:
+                    layertreedialog:
                         title: Layertree
                         class: Mapbender\CoreBundle\Element\Layertree
                         target: map
-                        type: element
+                        type: dialog
                         displaytype: tree
-                        useAccordion: true
-                        autoOpen: false
-                        titlemaxlength: 40
+                        autoOpen: true
+                        titlemaxlength: 30
                         showBaseSource: true
-                        layerRemove: true
-                        menu: [opacity,zoomtolayer,metadata]
+                        hideNotToggleable: false
+                        hideSelect: false
+                        hideInfo: false
+                        showHeader: true
+                        menu:
+                            - layerremove
+                            - opacity
+                            - zoomtolayer
+                            - metadata
+#                        useTheme: true
+#                        themes:
+#                            -  id: '19'
+#                               title: test
+#                               useTheme: true
+#                               opened: false
+#                               sourceVisibility: false
+#                               allSelected: false
+#                           -   id: '20'
+#                               title: 'YAML - main'
+#                               useTheme: true
+#                               opened: false
+#                               sourceVisibility: false
+#                               allSelected: false
+                sidepane:
                 footer:
                     activityindicator:
                         class: Mapbender\CoreBundle\Element\ActivityIndicator

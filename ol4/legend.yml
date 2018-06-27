@@ -1,9 +1,9 @@
 parameters:
     applications:
-        Layertree_Dialog:
-            title: Layertree Dialog
+        legend:
+            title: Legend
             screenshot: 'mapbender_user.png'
-            description: "Layertree in Dialog"
+            description: "Test Legend"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -51,13 +51,12 @@ parameters:
                         opacity: 100
             elements:
                 toolbar:
-                    layertree-button:
-                        title: Layertree
-                        tooltip: Layertree
+                    legend-button:
+                        title: Legend
+                        tooltip: Legend
                         class: Mapbender\CoreBundle\Element\Button
-                        label: true
-                        icon: iconLayertree
-                        target: layertreedialog
+                        target: legend
+                        icon: iconLegend
                         action: open
                 content:
                     map:
@@ -71,7 +70,7 @@ parameters:
                             max: [-500000,4350000,1600000,6850000]
                         scales: [5000000,1000000,500000,100000,50000,25000,10000,7500,5000,2500,1000,500]
                         maxResolution: 'auto'
-                        otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:900913","EPSG:4326"]
+                        otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:3857","EPSG:4326"]
                     zoombar:
                         class: Mapbender\CoreBundle\Element\ZoomBar
                         target: map
@@ -82,39 +81,32 @@ parameters:
                         anchor: right-top
                         position: [200,40]
                         draggable: false
-                    layertreedialog:
+                    legend:
+                        class: Mapbender\CoreBundle\Element\Legend
+                        target: map
+                        title: Legend
+                        elementType: dialog
+                        autoOpen: false
+                        displayType: list
+                        hideEmptyLayers: true
+                        noLegend: "No legend available"
+                        generateLegendGraphic: false
+                        showWmsTitle: true
+                        showLayerTitle: true
+                        showGroupedLayerTitle: true
+                sidepane:
+                    layertree:
                         title: Layertree
                         class: Mapbender\CoreBundle\Element\Layertree
                         target: map
-                        type: dialog
+                        type: element
                         displaytype: tree
-                        autoOpen: true
-                        titlemaxlength: 30
+                        useAccordion: true
+                        autoOpen: false
+                        titlemaxlength: 40
                         showBaseSource: true
-                        hideNotToggleable: false
-                        hideSelect: false
-                        hideInfo: false
-                        showHeader: true
-                        menu:
-                            - layerremove
-                            - opacity
-                            - zoomtolayer
-                            - metadata
-#                        useTheme: true
-#                        themes:
-#                            -  id: '19'
-#                               title: test
-#                               useTheme: true
-#                               opened: false
-#                               sourceVisibility: false
-#                               allSelected: false
-#                           -   id: '20'
-#                               title: 'YAML - main'
-#                               useTheme: true
-#                               opened: false
-#                               sourceVisibility: false
-#                               allSelected: false
-                sidepane:
+                        layerRemove: true
+                        menu: [opacity,zoomtolayer,metadata]
                 footer:
                     activityindicator:
                         class: Mapbender\CoreBundle\Element\ActivityIndicator

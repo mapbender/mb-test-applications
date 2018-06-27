@@ -1,9 +1,9 @@
 parameters:
     applications:
-        basesourceswitcher:
-            title: BaseSourceSwitcher
+        basesourceswitcher_bare:
+            title: BaseSourceSwitcher (bare)
             screenshot: 'mapbender_user.png'
-            description: "BaseSourceSwitcher"
+            description: "BaseSourceSwitcher (bare)"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -77,6 +77,58 @@ parameters:
                         tiled: true
                         opacity: 100
                         basesource: true
+                    # luenen_o:
+                    #     class: Mapbender\WmsBundle\Entity\WmsInstance
+                    #     title: Luenen Westansicht
+                    #     url: https://gis.luenen.de/mywms_birdeye/birdeyegesamt?SERVICE=WMS&version=1.1.1&REQUEST=GetCapabilities
+                    #     layers:
+                    #         50: { name: SL2017_04_10_O, title : 2017-04 Westansicht 10cm,  visible: true }
+                    #     info_format: text/html
+                    #     visible: true
+                    #     format: image/png
+                    #     transparent: true
+                    #     tiled: true
+                    #     opacity: 100
+                    #     basesource: true
+                    # luenen_s:
+                    #     class: Mapbender\WmsBundle\Entity\WmsInstance
+                    #     title: Luenen Nordansicht
+                    #     url: https://gis.luenen.de/mywms_birdeye/birdeyegesamt?SERVICE=WMS&version=1.1.1&REQUEST=GetCapabilities
+                    #     layers:
+                    #         60: { name: SL2017_04_10_S, title : 2017-04 Nordansicht 10cm,  visible: true }
+                    #     info_format: text/html
+                    #     visible: true
+                    #     format: image/png
+                    #     transparent: true
+                    #     tiled: true
+                    #     opacity: 100
+                    #     basesource: true
+                    # luenen_n:
+                    #     class: Mapbender\WmsBundle\Entity\WmsInstance
+                    #     title: OSM Suedansicht
+                    #     url: https://gis.luenen.de/mywms_birdeye/birdeyegesamt?SERVICE=WMS&version=1.1.1&REQUEST=GetCapabilities
+                    #     layers:
+                    #         70: { name: SL2017_04_10_N, title : 2017-04 S&uuml;dansicht 10cm,  visible: true }
+                    #     info_format: text/html
+                    #     visible: true
+                    #     format: image/png
+                    #     transparent: true
+                    #     tiled: true
+                    #     opacity: 100
+                    #     basesource: true
+                    # luenen_w:
+                    #     class: Mapbender\WmsBundle\Entity\WmsInstance
+                    #     title: OSM Ostansicht
+                    #     url: https://gis.luenen.de/mywms_birdeye/birdeyegesamt?SERVICE=WMS&version=1.1.1&REQUEST=GetCapabilities
+                    #     layers:
+                    #         80: { name: SL2017_04_10_W, title : 2017-04 Ostansicht 10cm,  visible: true }
+                    #     info_format: text/html
+                    #     visible: true
+                    #     format: image/png
+                    #     transparent: true
+                    #     tiled: true
+                    #     opacity: 100
+                    #     basesource: true
             elements:
                 toolbar:
                     basesourceswitcher:
@@ -85,8 +137,16 @@ parameters:
                         tooltip: BaseSourceSwitcher
                         target: map
                         sourcesets:
-                            - { title: OSM, group: Background, sources: [main]}
-                            - { title: Schwalmtal UMN, group: Background, sources: [main]}
+                            - {title: topplus, sources: [topplus]}
+                            - {title: osm, sources: [osm]}
+                            # 1:
+                            #     title: topplus
+                            #     group: luftbild
+                            #     sources: [topplus]
+                            # 2:
+                            #     title: osm,
+                            #     group: luftbild,
+                            #     sources: [osm]
                 content:
                     map:
                         title: Main Map
@@ -100,16 +160,6 @@ parameters:
                         scales: [5000000,1000000,500000,100000,50000,25000,10000,7500,5000,2500,1000,500]
                         maxResolution: 'auto'
                         otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:3857","EPSG:4326"]
-                    zoombar:
-                        class: Mapbender\CoreBundle\Element\ZoomBar
-                        target: map
-                        components: ["pan","history","zoom_box","zoom_max","zoom_slider"]
-#                        position: [15em, 3em]
-                        stepsize: 50
-                        stepbypixel: true
-                        anchor: right-top
-                        position: [200,40]
-                        draggable: false
                 sidepane:
                     layertree:
                         title: Layertree
@@ -124,30 +174,3 @@ parameters:
                         layerRemove: true
                         menu: [opacity,zoomtolayer,metadata]
                 footer:
-                    activityindicator:
-                        class: Mapbender\CoreBundle\Element\ActivityIndicator
-                        title: Activity Indicator
-                        activityClass: mb-activity
-                        ajaxActivityClass: mb-activity-ajax
-                        tileActivityClass: mb-activity-tile
-                    coordinates:
-                        class: Mapbender\CoreBundle\Element\CoordinatesDisplay
-                        title: Coordinates Display
-                        tooltip: Coordinates Display
-                        target: map
-                        label: false
-                        empty:  "x: - y: -"
-                        prefix: "x: "
-                        separator:  " y: "
-                    srs:
-                        class: Mapbender\CoreBundle\Element\SrsSelector
-                        title: SRS Selector
-                        tooltip: SRS Selector
-                        label: false
-                        target: map
-                    scaleselector:
-                        class: Mapbender\CoreBundle\Element\ScaleSelector
-                        title: Scale Selector
-                        tooltip: Scale Selector
-                        label: false
-                        target: map

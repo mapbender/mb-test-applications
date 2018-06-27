@@ -1,9 +1,9 @@
 parameters:
     applications:
-        Scalebar_Toolbar:
-            title: Scalebar Toolbar
+        arearuler_bare:
+            title: AreaRuler (Bare)
             screenshot: 'mapbender_user.png'
-            description: "Test ScaleBar in Toolbar"
+            description: "YML Test Area Ruler (Bare)"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -38,13 +38,15 @@ parameters:
                         opacity: 100
             elements:
                 toolbar:
-                    scalebar:
-                        class: Mapbender\CoreBundle\Element\ScaleBar
-                        target: map
-                        anchor: 'left-bottom'
-                        position: ['20px', '20px']
-                        maxWidth: 400
-                        units: ['km']
+                    arearulerButton:
+                        title: Area Ruler
+                        tooltip: Area Ruler
+                        class: Mapbender\CoreBundle\Element\Button
+                        icon: icon-area-ruler
+                        label: true
+                        target: arearuler
+                        deactivate: deactivate
+                        group: rulers
                 content:
                     map:
                         title: Main Map
@@ -58,5 +60,10 @@ parameters:
                         scales: [5000000,1000000,500000,100000,50000,25000,10000,7500,5000,2500,1000,500]
                         maxResolution: 'auto'
                         otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:3857","EPSG:4326"]
-                sidepane:
-                footer:
+                    arearuler:
+                        title: Area
+                        tooltip: 'area'
+                        class: Mapbender\CoreBundle\Element\Ruler
+                        target: map
+                        type: area
+#                        immediate: true

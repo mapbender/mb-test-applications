@@ -1,9 +1,9 @@
 parameters:
     applications:
-        Wms_Loader_naked:
-            title: Wms Loader (naked)
-            screenshot: 'mapbender_user.png'
-            description: "Test WMS Loader (naked)"
+        Redlining_Sidepane_bare:
+            title: Redlining Sidepane (bare)
+            screenshot: ''
+            description: "Test Redlining in Sidepane (bare)"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -24,27 +24,8 @@ parameters:
                         transparent: true
                         tiled: true
                         opacity: 100
-                overview:
-                    osm_overview:
-                        class: Mapbender\WmsBundle\Entity\WmsInstance
-                        title: OSM Demo
-                        url: http://osm-demo.wheregroup.com/service # http://osm-demo.wheregroup.com/service?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities
-                        layers:
-                            40: { name: osm,    title : Germany OSM Demo WhereGroup,  visible: true }
-                        tiled: false
-                        format: image/png
-                        transparent: true
-                        visible: true
-                        opacity: 100
             elements:
                 toolbar:
-                    wmsloader-button:
-                        title: WMS Loader
-                        tooltip: WMS Loader
-                        class: Mapbender\CoreBundle\Element\Button
-                        target: wmsloader
-                        icon: iconWms
-                        action: open
                 content:
                     map:
                         title: Main Map
@@ -57,16 +38,19 @@ parameters:
                             max: [-500000,4350000,1600000,6850000]
                         scales: [5000000,1000000,500000,100000,50000,25000,10000,7500,5000,2500,1000,500]
                         maxResolution: 'auto'
-                        otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:900913","EPSG:4326"]
-                    wmsloader:
-                        title: WMS Loader
-                        tooltip: 'WMS Loader'
-                        class: Mapbender\WmsBundle\Element\WmsLoader
-                        target: map
-                        autoOpen: false
-                        defaultFormat: 'image/png'
-                        defaultInfoFormat: 'text/html'
-                        splitLayers: false
-                        useDeclarative: true
+                        otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:3857","EPSG:4326"]
                 sidepane:
+                    redlining:
+                        title: Redlining
+                        class: Mapbender\CoreBundle\Element\Redlining
+                        target: map
+                        geometrytypes:
+                            - point
+                            - line
+                            - polygon
+                            - text
+                            - rectangle
+                        display_type: element
+                        auto_activate: false
+                        deactivate_on_close: false
                 footer:

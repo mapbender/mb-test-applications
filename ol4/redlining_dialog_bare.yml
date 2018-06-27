@@ -1,9 +1,9 @@
 parameters:
     applications:
-        Scalebar_Toolbar:
-            title: Scalebar Toolbar
-            screenshot: 'mapbender_user.png'
-            description: "Test ScaleBar in Toolbar"
+        Redlining_Dialog_Bare:
+            title: Redlining Dialog (bare)
+            screenshot: ''
+            description: "Test Redlining in a dialog (bare)"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -38,13 +38,14 @@ parameters:
                         opacity: 100
             elements:
                 toolbar:
-                    scalebar:
-                        class: Mapbender\CoreBundle\Element\ScaleBar
-                        target: map
-                        anchor: 'left-bottom'
-                        position: ['20px', '20px']
-                        maxWidth: 400
-                        units: ['km']
+                    redlining-button:
+                        title: Redlining
+                        tooltip: Redlining
+                        class: Mapbender\CoreBundle\Element\Button
+                        label: true
+                        icon: iconSearch
+                        target: redlining
+                        action: open
                 content:
                     map:
                         title: Main Map
@@ -58,5 +59,18 @@ parameters:
                         scales: [5000000,1000000,500000,100000,50000,25000,10000,7500,5000,2500,1000,500]
                         maxResolution: 'auto'
                         otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:3857","EPSG:4326"]
+                    redlining:
+                        title: Redlining
+                        class: Mapbender\CoreBundle\Element\Redlining
+                        target: map
+                        geometrytypes:
+                            - point
+                            - line
+                            - polygon
+                            - text
+                            - rectangle
+                        display_type: dialog
+                        auto_activate: false
+                        deactivate_on_close: false
                 sidepane:
                 footer:

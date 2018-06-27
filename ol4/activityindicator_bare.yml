@@ -1,9 +1,9 @@
 parameters:
     applications:
-        Scaledisplay_Naked:
-            title: Scaledisplay (naked)
+        Activity_Indicator_Bare:
+            title: Activity Indicator (bare)
             screenshot: 'mapbender_user.png'
-            description: "Test Scaledisplay (naked)"
+            description: "YML Test Activity Indicator (bare)"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -51,13 +51,10 @@ parameters:
                         scales: [5000000,1000000,500000,100000,50000,25000,10000,7500,5000,2500,1000,500]
                         maxResolution: 'auto'
                         otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:900913","EPSG:4326"]
-                    scaledisplay:
-                        title: Scale Display
-                        class: Mapbender\CoreBundle\Element\ScaleDisplay
-                        tooltip: Scale
-                        target: map
-                        anchor: left-top
-                        scalePrefix: Scale
-                        unitPrefix: true
-                sidepane:
                 footer:
+                    activityindicator:
+                        class: Mapbender\CoreBundle\Element\ActivityIndicator
+                        title: Activity Indicator
+                        activityClass: mb-activity
+                        ajaxActivityClass: mb-activity-ajax
+                        tileActivityClass: mb-activity-tile

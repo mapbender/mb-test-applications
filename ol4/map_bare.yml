@@ -1,9 +1,9 @@
 parameters:
     applications:
-        Scalebar_Toolbar:
-            title: Scalebar Toolbar
-            screenshot: 'mapbender_user.png'
-            description: "Test ScaleBar in Toolbar"
+        map_naked:
+            title: map_naked
+            screenshot:
+            description: "YML Test Map (naked)"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -24,27 +24,8 @@ parameters:
                         transparent: true
                         tiled: true
                         opacity: 100
-                overview:
-                    osm_overview:
-                        class: Mapbender\WmsBundle\Entity\WmsInstance
-                        title: OSM Demo
-                        url: http://osm-demo.wheregroup.com/service # http://osm-demo.wheregroup.com/service?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities
-                        layers:
-                            40: { name: osm,    title : Germany OSM Demo WhereGroup,  visible: true }
-                        tiled: false
-                        format: image/png
-                        transparent: true
-                        visible: true
-                        opacity: 100
             elements:
                 toolbar:
-                    scalebar:
-                        class: Mapbender\CoreBundle\Element\ScaleBar
-                        target: map
-                        anchor: 'left-bottom'
-                        position: ['20px', '20px']
-                        maxWidth: 400
-                        units: ['km']
                 content:
                     map:
                         title: Main Map

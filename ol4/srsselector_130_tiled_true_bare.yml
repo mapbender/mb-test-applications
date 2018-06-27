@@ -1,9 +1,9 @@
 parameters:
     applications:
-        Scalebar_Toolbar:
-            title: Scalebar Toolbar
-            screenshot: 'mapbender_user.png'
-            description: "Test ScaleBar in Toolbar"
+        srsselector_130_tiled_true_bare:
+            title: SRS Selector WMS 130 tiled true (bare)
+            screenshot:
+            description: "Test SrsSelector WMS 1.3.0, Tiled True (bare)"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -15,7 +15,8 @@ parameters:
                     osm:
                         class: Mapbender\WmsBundle\Entity\WmsInstance
                         title: OSM Demo
-                        url: http://osm-demo.wheregroup.com/service # http://osm-demo.wheregroup.com/service?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities
+                        url: http://osm-demo.wheregroup.com/service?
+                        version: 1.3.0
                         layers:
                             30: { name: osm,    title : Germany OSM Demo WhereGroup,  visible: true }
                         info_format: text/html
@@ -24,27 +25,8 @@ parameters:
                         transparent: true
                         tiled: true
                         opacity: 100
-                overview:
-                    osm_overview:
-                        class: Mapbender\WmsBundle\Entity\WmsInstance
-                        title: OSM Demo
-                        url: http://osm-demo.wheregroup.com/service # http://osm-demo.wheregroup.com/service?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities
-                        layers:
-                            40: { name: osm,    title : Germany OSM Demo WhereGroup,  visible: true }
-                        tiled: false
-                        format: image/png
-                        transparent: true
-                        visible: true
-                        opacity: 100
             elements:
                 toolbar:
-                    scalebar:
-                        class: Mapbender\CoreBundle\Element\ScaleBar
-                        target: map
-                        anchor: 'left-bottom'
-                        position: ['20px', '20px']
-                        maxWidth: 400
-                        units: ['km']
                 content:
                     map:
                         title: Main Map
@@ -60,3 +42,9 @@ parameters:
                         otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:3857","EPSG:4326"]
                 sidepane:
                 footer:
+                    srs:
+                        class: Mapbender\CoreBundle\Element\SrsSelector
+                        title: SRS Selector
+                        tooltip: SRS Selector
+                        label: false
+                        target: map

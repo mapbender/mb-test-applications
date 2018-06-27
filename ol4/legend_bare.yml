@@ -1,9 +1,9 @@
 parameters:
     applications:
-        Export_Image:
-            title: Export Image
-            screenshot:
-            description: "YML Test Export Image."
+        Legend_Naked:
+            title: Legend (Naked)
+            screenshot: 'mapbender_user.png'
+            description: "Test Legend (Naked)"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -51,13 +51,12 @@ parameters:
                         opacity: 100
             elements:
                 toolbar:
-                    imageexport-button:
-                        title: Image Export
-                        tooltip: Image Export
+                    legend-button:
+                        title: Legend
+                        tooltip: Legend
                         class: Mapbender\CoreBundle\Element\Button
-                        label: true
-                        icon: iconImageExport
-                        target: imageexport
+                        target: legend
+                        icon: iconLegend
                         action: open
                 content:
                     map:
@@ -71,58 +70,19 @@ parameters:
                             max: [-500000,4350000,1600000,6850000]
                         scales: [5000000,1000000,500000,100000,50000,25000,10000,7500,5000,2500,1000,500]
                         maxResolution: 'auto'
-                        otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:900913","EPSG:4326"]
-                    zoombar:
-                        class: Mapbender\CoreBundle\Element\ZoomBar
+                        otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:3857","EPSG:4326"]
+                    legend:
+                        class: Mapbender\CoreBundle\Element\Legend
                         target: map
-                        components: ["pan","history","zoom_box","zoom_max","zoom_slider"]
-                        position: [15em, 3em]
-                        stepsize: 50
-                        stepbypixel: true
-                        anchor: right-top
-                        position: [200,40]
-                        draggable: false
-                    imageexport:
-                        class: Mapbender\PrintBundle\Element\ImageExport
-                        target: map
-                sidepane:
-                    layertree:
-                        title: Layertree
-                        class: Mapbender\CoreBundle\Element\Layertree
-                        target: map
-                        type: element
-                        displaytype: tree
-                        useAccordion: false
+                        title: Legend
+                        elementType: dialog
                         autoOpen: false
-                        titlemaxlength: 30
-                        showBaseSource: true
-                        layerRemove: true
-                        menu: [opacity,zoomtolayer,metadata]
+                        displayType: list
+                        hideEmptyLayers: true
+                        noLegend: "No legend available"
+                        generateLegendGraphic: false
+                        showWmsTitle: true
+                        showLayerTitle: true
+                        showGroupedLayerTitle: true
+                sidepane:
                 footer:
-                    activityindicator:
-                        class: Mapbender\CoreBundle\Element\ActivityIndicator
-                        title: Activity Indicator
-                        activityClass: mb-activity
-                        ajaxActivityClass: mb-activity-ajax
-                        tileActivityClass: mb-activity-tile
-                    coordinates:
-                        class: Mapbender\CoreBundle\Element\CoordinatesDisplay
-                        title: Coordinates Display
-                        tooltip: Coordinates Display
-                        target: map
-                        label: false
-                        empty:  "x: - y: -"
-                        prefix: "x: "
-                        separator:  " y: "
-                    srs:
-                        class: Mapbender\CoreBundle\Element\SrsSelector
-                        title: SRS Selector
-                        tooltip: SRS Selector
-                        label: false
-                        target: map
-                    scaleselector:
-                        class: Mapbender\CoreBundle\Element\ScaleSelector
-                        title: Scale Selector
-                        tooltip: Scale Selector
-                        label: false
-                        target: map

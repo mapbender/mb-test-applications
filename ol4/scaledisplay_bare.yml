@@ -1,9 +1,9 @@
 parameters:
     applications:
-        Scalebar_Toolbar:
-            title: Scalebar Toolbar
+        Scaledisplay_Bare:
+            title: Scaledisplay (bare)
             screenshot: 'mapbender_user.png'
-            description: "Test ScaleBar in Toolbar"
+            description: "Test Scaledisplay (bare)"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -38,13 +38,6 @@ parameters:
                         opacity: 100
             elements:
                 toolbar:
-                    scalebar:
-                        class: Mapbender\CoreBundle\Element\ScaleBar
-                        target: map
-                        anchor: 'left-bottom'
-                        position: ['20px', '20px']
-                        maxWidth: 400
-                        units: ['km']
                 content:
                     map:
                         title: Main Map
@@ -58,5 +51,13 @@ parameters:
                         scales: [5000000,1000000,500000,100000,50000,25000,10000,7500,5000,2500,1000,500]
                         maxResolution: 'auto'
                         otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:3857","EPSG:4326"]
+                    scaledisplay:
+                        title: Scale Display
+                        class: Mapbender\CoreBundle\Element\ScaleDisplay
+                        tooltip: Scale
+                        target: map
+                        anchor: left-top
+                        scalePrefix: Scale
+                        unitPrefix: true
                 sidepane:
                 footer:

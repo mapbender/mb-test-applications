@@ -1,9 +1,9 @@
 parameters:
     applications:
-        Redlining_Imageexport:
-            title: Redlining Imageexport
+        Overview:
+            title: Overview Map
             screenshot: 'mapbender_user.png'
-            description: "Test Redlining with ImageExport"
+            description: "Test Overview Map"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -51,14 +51,6 @@ parameters:
                         opacity: 100
             elements:
                 toolbar:
-                    imageexport-button:
-                        title: Image Export
-                        tooltip: Image Export
-                        class: Mapbender\CoreBundle\Element\Button
-                        label: true
-                        icon: iconImageExport
-                        target: imageexport
-                        action: open
                 content:
                     map:
                         title: Main Map
@@ -71,7 +63,7 @@ parameters:
                             max: [-500000,4350000,1600000,6850000]
                         scales: [5000000,1000000,500000,100000,50000,25000,10000,7500,5000,2500,1000,500]
                         maxResolution: 'auto'
-                        otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:900913","EPSG:4326"]
+                        otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:3857","EPSG:4326"]
                     zoombar:
                         class: Mapbender\CoreBundle\Element\ZoomBar
                         target: map
@@ -79,35 +71,31 @@ parameters:
                         position: [15em, 3em]
                         stepsize: 50
                         stepbypixel: true
-                        anchor: right-top
-                        position: [200,40]
+                        anchor: right-bottom
+                        position: [400,40]
                         draggable: false
-                    imageexport:
-                        class: Mapbender\PrintBundle\Element\ImageExport
-                        target: map
+                    overview:
+                       title: Overview
+                       class: Mapbender\CoreBundle\Element\Overview
+                       tooltip: 'Overview'
+                       target: map
+                       layerset: overview
+                       width: 200
+                       height: 100
+                       anchor: 'right-top'
+                       position: ['0px', '0px']
+                       maximized: true
+                       fixed: true
                 sidepane:
-                    redlining:
-                        title: Redlining
-                        class: Mapbender\CoreBundle\Element\Redlining
-                        target: map
-                        geometrytypes:
-                            - point
-                            - line
-                            - polygon
-                            - text
-                            - rectangle
-                        display_type: element
-                        auto_activate: true
-                        deactivate_on_close: false
                     layertree:
                         title: Layertree
                         class: Mapbender\CoreBundle\Element\Layertree
                         target: map
                         type: element
                         displaytype: tree
-                        useAccordion: true
+                        useAccordion: false
                         autoOpen: false
-                        titlemaxlength: 40
+                        titlemaxlength: 30
                         showBaseSource: true
                         layerRemove: true
                         menu: [opacity,zoomtolayer,metadata]

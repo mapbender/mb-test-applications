@@ -1,9 +1,9 @@
 parameters:
     applications:
-        Scalebar_Toolbar:
-            title: Scalebar Toolbar
-            screenshot: 'mapbender_user.png'
-            description: "Test ScaleBar in Toolbar"
+        ImageExport_Bare:
+            title: ImageExport (bare)
+            screenshot:
+            description: "YML Test Image Export (bare)"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -38,13 +38,14 @@ parameters:
                         opacity: 100
             elements:
                 toolbar:
-                    scalebar:
-                        class: Mapbender\CoreBundle\Element\ScaleBar
-                        target: map
-                        anchor: 'left-bottom'
-                        position: ['20px', '20px']
-                        maxWidth: 400
-                        units: ['km']
+                    imageexport-button:
+                        title: Image Export
+                        tooltip: Image Export
+                        class: Mapbender\CoreBundle\Element\Button
+                        label: true
+                        icon: iconImageExport
+                        target: imageexport
+                        action: open
                 content:
                     map:
                         title: Main Map
@@ -58,5 +59,6 @@ parameters:
                         scales: [5000000,1000000,500000,100000,50000,25000,10000,7500,5000,2500,1000,500]
                         maxResolution: 'auto'
                         otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:3857","EPSG:4326"]
-                sidepane:
-                footer:
+                    imageexport:
+                        class: Mapbender\PrintBundle\Element\ImageExport
+                        target: map

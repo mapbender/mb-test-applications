@@ -1,9 +1,9 @@
 parameters:
     applications:
-        map_naked:
-            title: map_naked
-            screenshot:
-            description: "YML Test Map (naked)"
+        lineruler_naked:
+            title: LineRuler (Naked)
+            screenshot: 'mapbender_user.png'
+            description: "YML Test Line Ruler (Naked)"
             published: true
             template:  Mapbender\CoreBundle\Template\Fullscreen
             regionProperties:
@@ -24,8 +24,29 @@ parameters:
                         transparent: true
                         tiled: true
                         opacity: 100
+                overview:
+                    osm_overview:
+                        class: Mapbender\WmsBundle\Entity\WmsInstance
+                        title: OSM Demo
+                        url: http://osm-demo.wheregroup.com/service # http://osm-demo.wheregroup.com/service?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetCapabilities
+                        layers:
+                            40: { name: osm,    title : Germany OSM Demo WhereGroup,  visible: true }
+                        tiled: false
+                        format: image/png
+                        transparent: true
+                        visible: true
+                        opacity: 100
             elements:
                 toolbar:
+                    linerulerButton:
+                        title: Line Ruler
+                        tooltip: Line Ruler
+                        class: Mapbender\CoreBundle\Element\Button
+                        icon: icon-line-ruler
+                        label: true
+                        target: lineruler
+                        deactivate: deactivate
+                        group: rulers
                 content:
                     map:
                         title: Main Map
@@ -39,5 +60,10 @@ parameters:
                         scales: [5000000,1000000,500000,100000,50000,25000,10000,7500,5000,2500,1000,500]
                         maxResolution: 'auto'
                         otherSrs: ["EPSG:25833","EPSG:31466","EPSG:31467","EPSG:900913","EPSG:4326"]
-                sidepane:
-                footer:
+                    lineruler:
+                        title: Line
+                        tooltip: 'line'
+                        class: Mapbender\CoreBundle\Element\Ruler
+                        target: map
+                        type: line
+#                        immediate: true
