@@ -1,4 +1,5 @@
 # Test applications for Mapbender.
+⚠️ This repo contains old demo applications. For up-to-date demo applications see [the starter repository](https://github.com/mapbender/mapbender-starter/tree/master/application/config/applications) or [the workshop bundle](https://github.com/mapbender/mapbender-workshop/)
 
 ## Installation:
 
